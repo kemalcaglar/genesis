@@ -62,7 +62,7 @@
       style: function () {
         return (`<style>
 .wrapper .container > div {
-  position: relative;
+  position: absolute;
 }
 
 .wrapper .container form {
