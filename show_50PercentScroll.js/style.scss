@@ -1,0 +1,113 @@
+$scenarioId: 999;
+$variationId: 1;
+$nameImg: "/themes/custom/multinet/images/form-icon/user.svg";
+$phoneImg: "/themes/custom/multinet/images/form-icon/call.svg";
+$emailImg: "/themes/custom/multinet/images/form-icon/email.svg";
+
+.scenario-#{$scenarioId}-#{$variationId} {
+  $main: &;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999999;
+  .smpl_container {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 400px;
+    padding: 10px;
+    background-color: silver;
+    border-radius: 10px;
+    color: #2d2d2d;
+    #{$main}_close {
+      position: absolute;
+      right: 10px;
+      top: 2px;
+      font-size: 24px;
+      height: 24px;
+      line-height: 24px;
+      cursor: pointer;
+      color: #000;
+    }
+    section {
+      &#{$main}_header {
+        h3 {
+          text-align: center;
+        }
+      }
+      &#{$main}_content {
+        width: 100%;
+        form {
+          width: inherit;
+          label {
+            width: inherit;
+            position: relative;
+            &:not(:last-child) {
+              margin-bottom: 10px;
+            }
+            &.textField{
+              &::after {
+                content: '';
+                background-color: #5278bf;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 18px;
+                height: 34px;
+                width: 32px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+              }
+            }
+            &[for='name'] {
+              &::after {
+                background-image: url($nameImg);
+              }
+            }
+            &[for='phone'] {
+              &::after {
+                background-image: url($phoneImg);
+              }
+            }
+            &[for='email'] {
+              &::after {
+                background-image: url($emailImg);
+              }
+            }
+            input {
+              width: 100%;
+              background-color: #ecf5ff;
+              border: solid 1px #dde2e6;
+              box-shadow: none;
+              color: #15143a;
+              font-weight: 500;
+            }
+          }
+          #{$main}_submit {
+            button {
+              width: 100%;
+              background-color: rgb(21, 20, 58);
+              color: #fff;
+              &:hover {
+                background-color: #5278bf;
+              }
+            }
+          }
+          #{$main}_footer {
+            label {
+              font-size: 12px;
+              input {
+                width: initial;
+              }
+              span {
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

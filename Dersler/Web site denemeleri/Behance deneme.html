@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>behance2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&family=Teko:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        img {
+            display: block;
+        }
+        .container-fluid,
+        .container {
+            padding-right:15px;
+            padding-left: 15px;
+            margin: 0 auto;
+        }
+        .container-fluid {
+            width: 100%;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+            height: 100%;
+        }
+
+        .no-gutter>.col-sm-12,
+        .no-gutter>.col-sm-11,
+        .no-gutter>.col-sm-10,
+        .no-gutter>.col-sm-9,
+        .no-gutter>.col-sm-8,
+        .no-gutter>.col-sm-7,
+        .no-gutter>.col-sm-6,
+        .no-gutter>.col-sm-5,
+        .no-gutter>.col-sm-4,
+        .no-gutter>.col-sm-3,
+        .no-gutter>.col-sm-2,
+        .no-gutter>.col-sm-1,
+        .no-gutter>.col-md-12,
+        .no-gutter>.col-md-11,
+        .no-gutter>.col-md-10,
+        .no-gutter>.col-md-9,
+        .no-gutter>.col-md-8,
+        .no-gutter>.col-md-7,
+        .no-gutter>.col-md-6,
+        .no-gutter>.col-md-5,
+        .no-gutter>.col-md-4,
+        .no-gutter>.col-md-3,
+        .no-gutter>.col-md-2,
+        .no-gutter>.col-md-1,
+        .no-gutter>.col-lg-12,
+        .no-gutter>.col-lg-11,
+        .no-gutter>.col-lg-10,
+        .no-gutter>.col-lg-9,
+        .no-gutter>.col-lg-8,
+        .no-gutter>.col-lg-7,
+        .no-gutter>.col-lg-6,
+        .no-gutter>.col-lg-5,
+        .no-gutter>.col-lg-4,
+        .no-gutter>.col-lg-3,
+        .no-gutter>.col-lg-2,
+        .no-gutter>.col-lg-1,
+        .no-gutter>.col-xl-12,
+        .no-gutter>.col-xl-11,
+        .no-gutter>.col-xl-10,
+        .no-gutter>.col-xl-9,
+        .no-gutter>.col-xl-8,
+        .no-gutter>.col-xl-7,
+        .no-gutter>.col-xl-6,
+        .no-gutter>.col-xl-5,
+        .no-gutter>.col-xl-4,
+        .no-gutter>.col-xl-3,
+        .no-gutter>.col-xl-2,
+        .no-gutter>.col-xl-1,
+        .no-gutter>.col-xxl-12,
+        .no-gutter>.col-xxl-11,
+        .no-gutter>.col-xxl-10,
+        .no-gutter>.col-xxl-9,
+        .no-gutter>.col-xxl-8,
+        .no-gutter>.col-xxl-7,
+        .no-gutter>.col-xxl-6,
+        .no-gutter>.col-xxl-5,
+        .no-gutter>.col-xxl-4,
+        .no-gutter>.col-xxl-3,
+        .no-gutter>.col-xxl-2,
+        .no-gutter>.col-xxl-1{
+            padding: 0;
+        }
+        .col-sm-12,
+        .col-sm-11,
+        .col-sm-10,
+        .col-sm-9,
+        .col-sm-8,
+        .col-sm-7,
+        .col-sm-6,
+        .col-sm-5,
+        .col-sm-4,
+        .col-sm-3,
+        .col-sm-2,
+        .col-sm-1,
+        .col-md-12,
+        .col-md-11,
+        .col-md-10,
+        .col-md-9,
+        .col-md-8,
+        .col-md-7,
+        .col-md-6,
+        .col-md-5,
+        .col-md-4,
+        .col-md-3,
+        .col-md-2,
+        .col-md-1,
+        .col-lg-12,
+        .col-lg-11,
+        .col-lg-10,
+        .col-lg-9,
+        .col-lg-8,
+        .col-lg-7,
+        .col-lg-6,
+        .col-lg-5,
+        .col-lg-4,
+        .col-lg-3,
+        .col-lg-2,
+        .col-lg-1,
+        .col-xl-12,
+        .col-xl-11,
+        .col-xl-10,
+        .col-xl-9,
+        .col-xl-8,
+        .col-xl-7,
+        .col-xl-6,
+        .col-xl-5,
+        .col-xl-4,
+        .col-xl-3,
+        .col-xl-2,
+        .col-xl-1,
+        .col-xxl-12,
+        .col-xxl-11,
+        .col-xxl-10,
+        .col-xxl-9,
+        .col-xxl-8,
+        .col-xxl-7,
+        .col-xxl-6,
+        .col-xxl-5,
+        .col-xxl-4,
+        .col-xxl-3,
+        .col-xxl-2,
+        .col-xxl-1 {
+            position: relative;
+            padding: 0 15px;
+        }
+        @media (min-width: 577px) {
+            .container {
+                width: 540px;
+            }
+            .col-sm-12 {
+                width: calc((100% / 12) * 12);
+            }
+
+            .col-sm-11 {
+                width: calc((100% / 12) * 11);
+            }
+
+            .col-sm-10 {
+                width: calc((100% / 12) * 10);
+            }
+
+            .col-sm-9 {
+                width: calc((100% / 12) * 9);
+            }
+            .col-sm-8 {
+                width: calc((100% / 12) * 8);
+            }
+
+            .col-sm-7 {
+                width: calc((100% / 12) * 7);
+            }
+
+            .col-sm-6 {
+                width: calc((100% / 12) * 6);
+            }
+
+            .col-sm-5 {
+                width: calc((100% / 12) * 5);
+            }
+            .col-sm-4 {
+                width: calc((100% / 12) * 4);
+            }
+
+            .col-sm-3 {
+                width: calc((100% / 12) * 3);
+            }
+
+            .col-sm-2 {
+                width: calc((100% / 12) * 2);
+            }
+
+            .col-sm-1 {
+                width: calc(100% / 12);
+            }
+        }
+        @media (min-width: 769px) {
+            .container {
+                width: 720px;
+            }
+            .col-md-12 {
+                width: calc((100% / 12) * 12);
+            }
+
+            .col-md-11 {
+                width: calc((100% / 12) * 11);
+            }
+
+            .col-md-10 {
+                width: calc((100% / 12) * 10);
+            }
+
+            .col-md-9 {
+                width: calc((100% / 12) * 9);
+            }
+            .col-md-8 {
+                width: calc((100% / 12) * 8);
+            }
+
+            .col-md-7 {
+                width: calc((100% / 12) * 7);
+            }
+
+            .col-md-6 {
+                width: calc((100% / 12) * 6);
+            }
+
+            .col-md-5 {
+                width: calc((100% / 12) * 5);
+            }
+            .col-md-4 {
+                width: calc((100% / 12) * 4);
+            }
+
+            .col-md-3 {
+                width: calc((100% / 12) * 3);
+            }
+
+            .col-md-2 {
+                width: calc((100% / 12) * 2);
+            }
+
+            .col-md-1 {
+                width: calc(100% / 12);
+            }
+        }
+        @media (min-width: 993px) {
+            .container {
+                width: 960px;
+            }
+            .col-lg-12 {
+                width: calc((100% / 12) * 12);
+            }
+
+            .col-lg-11 {
+                width: calc((100% / 12) * 11);
+            }
+
+            .col-lg-10 {
+                width: calc((100% / 12) * 10);
+            }
+
+            .col-lg-9 {
+                width: calc((100% / 12) * 9);
+            }
+            .col-lg-8 {
+                width: calc((100% / 12) * 8);
+            }
+
+            .col-lg-7 {
+                width: calc((100% / 12) * 7);
+            }
+
+            .col-lg-6 {
+                width: calc((100% / 12) * 6);
+            }
+
+            .col-lg-5 {
+                width: calc((100% / 12) * 5);
+            }
+            .col-lg-4 {
+                width: calc((100% / 12) * 4);
+            }
+
+            .col-lg-3 {
+                width: calc((100% / 12) * 3);
+            }
+
+            .col-lg-2 {
+                width: calc((100% / 12) * 2);
+            }
+
+            .col-lg-1 {
+                width: calc(100% / 12);
+            }
+        }
+        @media (min-width: 1200px) {
+            .container {
+                width: 1140px;
+            }
+            .col-xl-12 {
+                width: calc((100% / 12) * 12);
+            }
+
+            .col-xl-11 {
+                width: calc((100% / 12) * 11);
+            }
+
+            .col-xl-10 {
+                width: calc((100% / 12) * 10);
+            }
+
+            .col-xl-9 {
+                width: calc((100% / 12) * 9);
+            }
+            .col-xl-8 {
+                width: calc((100% / 12) * 8);
+            }
+
+            .col-xl-7 {
+                width: calc((100% / 12) * 7);
+            }
+
+            .col-xl-6 {
+                width: calc((100% / 12) * 6);
+            }
+
+            .col-xl-5 {
+                width: calc((100% / 12) * 5);
+            }
+            .col-xl-4 {
+                width: calc((100% / 12) * 4);
+            }
+
+            .col-xl-3 {
+                width: calc((100% / 12) * 3);
+            }
+
+            .col-xl-2 {
+                width: calc((100% / 12) * 2);
+            }
+
+            .col-xl-1 {
+                width: calc(100% / 12);
+            }
+        }
+        @media (min-width: 1400px) {
+            .container {
+                width: 1320px;
+            }
+            .col-xxl-12 {
+                width: calc((100% / 12) * 12);
+            }
+
+            .col-xxl-11 {
+                width: calc((100% / 12) * 11);
+            }
+
+            .col-xxl-10 {
+                width: calc((100% / 12) * 10);
+            }
+
+            .col-xxl-9 {
+                width: calc((100% / 12) * 9);
+            }
+            .col-xxl-8 {
+                width: calc((100% / 12) * 8);
+            }
+
+            .col-xxl-7 {
+                width: calc((100% / 12) * 7);
+            }
+
+            .col-xxl-6 {
+                width: calc((100% / 12) * 6);
+            }
+
+            .col-xxl-5 {
+                width: calc((100% / 12) * 5);
+            }
+            .col-xxl-4 {
+                width: calc((100% / 12) * 4);
+            }
+
+            .col-xxl-3 {
+                width: calc((100% / 12) * 3);
+            }
+
+            .col-xxl-2 {
+                width: calc((100% / 12) * 2);
+            }
+
+            .col-xxl-1 {
+                width: calc(100% / 12);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            font-family: 'Teko', sans-serif;
+        }
+        .img-responsive {
+            width: 100%;
+            height: auto;
+        }
+        #hakkimizda img {
+            width: 285px;
+            height: auto;
+            margin-right: 50px;
+        }
+        .img-responsive2 {
+        width: 100%;
+        height: auto;
+        }
+        #slider img {
+            width: 100%;
+            height: 800px;
+        }
+        #slider2 img{
+            width: 100%;
+            height: 500px;
+        }
+        .yazi {
+            text-decoration: none;
+            color: #2f353b;
+            font-size: 17px;
+        }
+        .yazi2 {
+            color: white;
+            font-family: 'Teko', sans-serif;
+            font-size: 18px;
+        }
+        .bg-silver {
+            background: #f3f3f3;
+        }
+        .bg-white {
+            background: #ffffff;
+        }
+        .bg-blue {
+            background: #1377bc;
+        }
+        .bg-silver {
+            background: #f6f6f6;
+        }
+        .bg-dark {
+            background: #2f353b;
+        }
+        .bg-img {
+            background: url("https://www.umurdilek.com/wp-content/uploads/2016/06/Adam_by_Umur_Dilek.jpg") no-repeat center center;
+            background-size: cover;
+            height: 100%;
+        }
+        #hakkimizda {
+            position: relative;
+        }
+        #hakkimizda .background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+        #hakkimizda .bg-silver,
+        #hakkimizda .bg-white,
+        #hakkimizda .background {
+            height: 100%;
+            width: 100%;
+        }
+        #hakkimizda .icerik {
+            position: relative;
+            z-index: 2;
+        }
+        .verticle-middle {
+            align-items: center;
+            height: 100%;
+        }
+        .justify-content-end {
+            justify-content: flex-end;
+        }
+        .justify-content-end,
+        .verticle-middle {
+            display: flex;
+        }
+        p {
+            text-indent:50px;
+        }
+        #urunlerimiz {
+            position: relative;
+            height: 600px;
+        }
+        #urunlerimiz .background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+        #siparis {
+            position: relative;
+            height: 100px;
+        }
+        #siparis .background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+
+        #haklar .background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+        #urunlerimiz .bg-silver,
+        #urunlerimiz .bg-white,
+        #urunlerimiz .background {
+            height: 100%;
+            width: 100%;
+        }
+        #urunlerimiz .icerik,
+        #siparis .icerik {
+            position: relative;
+            z-index: 2;
+        }
+        .border {
+            border-radius: 15px;
+        }
+        .justify-content-center {
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            display: flex;
+        }
+        .space-beetween {
+            justify-content: space-between;
+        }
+        .btn {
+            height: 40px;
+            display: inline-block;
+            background: #0f3030;
+            color: white;
+            font-size: 25px;
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 30px;
+        }
+        .btn-full {
+            display: block;
+        }
+        header a {
+            display: block;
+            text-align: center;
+        }
+        header img {
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+        }
+        .border-height {
+            height: 100px;
+        }
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 250px;
+            background-color: #2ba2db;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #2ba2db50;
+        }
+        .form-border{
+            border-radius: 5px;
+            background-color: #fbfbfb;
+            padding: 20px;
+        }
+
+        .iletisim-formu {
+            position: absolute;
+            bottom: -50px;
+
+        }
+        footer {
+            padding: 35px 0;
+        }
+        .margin-left-10 {
+            margin-left: 10px;
+        }
+        .margin-right-10 {
+            margin-right: 10px;
+        }
+        .padding-top-5 {
+            padding-top: 5px;
+        }
+        .address > div {
+            display: flex;
+            flex-direction: row;
+            margin-bottom:10px
+        }
+
+        .address .icon {
+            width: 50px
+        }
+
+        .address .yazi {
+            flex:1;
+            align-items: center;
+            display: flex;
+        }
+        .address div:nth-child(1) {
+            padding-top: 10px;
+        }
+        .img-full {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row verticle-middle justify-content-center">
+            <div class="col-sm-5">
+                <div class="row justify-content-end">
+                    <div class="col-sm-3">
+                        <a href="#">ANASAYFA</a>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href="#">HAKKIMIZDA</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQXZ4f5Lrktt4fkIVJV0A_ySefXK0WqDq8TXg&usqp=CAU" alt="logo">
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <a href="#">ÜRÜNLERİMİZ</a>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href="#">İLETİŞİM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="slider">
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="col-sm-12">
+                <img src="https://p4.wallpaperbetter.com/wallpaper/864/748/944/colorful-fabric-wallpaper-preview.jpg" alt="slide1">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="hakkimizda">
+    <div class="container icerik">
+        <div class="row justify-content-end" >
+
+
+            <div  class="col-sm-7">
+                <article class="yazi">
+                    <h2>HAKKIMIZDA</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ha
+                        s been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                        galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s with the release of Letraset sheets containing
+                        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum ha
+                        s been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                        galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s with the release of Letraset sheets containing
+                        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid background">
+        <div class="row no-gutter">
+            <div class="col-sm-5">
+                <div class="bg-silver">
+                    <div class="verticle-middle justify-content-end">
+                        <img src="https://www.pngkit.com/png/full/287-2871219_happy-woman-single-and-happy-2-living-alone.png" alt="hakkımızdapng">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="bg-white"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="urunlerimiz" class="verticle-middle">
+    <div class="container icerik">
+        <div class="row space-beetween">
+            <div class="col-sm-4">
+                <div>ÜRÜNLERİMİZ</div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row ">
+                   <div class="col-sm-6">
+                       <a class="btn btn-full" href="#">Mayo Grubu</a>
+                   </div>
+                    <div class="col-sm-6">
+                        <a class="btn btn-full" href="#">Bikini Grubu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3  ">
+                <div>
+                    <img class="img-responsive2 border " src="https://arel.edu.tr/theme/arel/images/alan1/neden-arel.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div>
+                    <img class="img-responsive2 border" src="https://arel.edu.tr/theme/arel/images/alan1/neden-arel.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div>
+                    <img class="img-responsive2 border" src="https://arel.edu.tr/theme/arel/images/alan1/neden-arel.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div>
+                    <img class="img-responsive2 border" src="https://arel.edu.tr/theme/arel/images/alan1/neden-arel.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid background">
+        <div class="row no-gutter">
+            <div class="col-sm-7">
+                <div class="bg-white"></div>
+            </div>
+            <div class="col-sm-5">
+                <div class="bg-img"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="siparis" class="verticle-middle">
+    <div class="container icerik">
+        <div class="row space-beetween">
+            <div class="col-sm-4">
+                <div class="yazi2">Özel desenler mi arıyorsunuz? Bize ulaşın!</div>
+            </div>
+            <div class="col-sm-1">
+                <a class="btn btn-full" href="#">Sipariş</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid background">
+        <div class="row no-gutter">
+            <div class="col-sm-12">
+                <div class="bg-blue border-height">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="col-sm-12">
+                <img class="img-full" src="./harita.jpg" alt="">
+            </div>
+        </div>
+    </div>
+<div id="iletisim">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="address">
+                    <div>
+                        <span class="icon"><i class="fas fa-store-alt fa-2x margin-right-10"></i> </span>
+                        <span class="yazi"> 2 Nolu Beşirli Mah.</span>
+                    </div>
+                    <div>
+                        <span class="icon"><i class="fas fa-store-alt fa-2x margin-right-10"></i> </span>
+                        <span class="yazi"> 2 Nolu Beşirli Mah.</span>
+                    </div>
+                    <div>
+                        <span class="icon"><i class="fas fa-store-alt fa-2x margin-right-10"></i> </span>
+                        <span class="yazi"> 2 Nolu Beşirli Mah.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-border iletisim-formu">
+                    <form action="kemalmuco.net">
+                        <label for="ad">Adınız</label>
+                        <input type="text" id="ad" name="ad" placeholder="Adınız..">
+
+                        <label for="soyad">Soyadınız</label>
+                        <input type="text" id="soyad" name="soyad" placeholder="Soyadınız..">
+
+                        <label for="meslek">Mesleğiniz</label>
+                        <select id="meslek" name="meslek">
+                            <option value="yazilim">Yazılımcı</option>
+                            <option value="tasarim">Web Tasarımcı</option>
+                            <option value="grafik">Grafik</option>
+                        </select>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="yazi2">Tüm hakları saklıdır. 2018 - Gür Kumaş</div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

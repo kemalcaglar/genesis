@@ -1,0 +1,23 @@
+.form_error {
+  padding: 5px 10px;
+  font-size: 14px;
+  margin: 0px 0px 10px 0px;
+  color: #000000;
+
+}
+
+.form_error:before {
+    background: #FCC7C7;
+}
+
+
+
+.error-page {font-size: 155px}
+.not-found {font-size: 40px}
+.error-desc {font-size:22px;}
+
+#aside-menu a {
+	font-size: 22px;
+    font-weight: 400;
+	line-height: 26px;
+}

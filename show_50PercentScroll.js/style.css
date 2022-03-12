@@ -1,0 +1,109 @@
+.scenario-999-1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999999;
+}
+
+.scenario-999-1 .smpl_container {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  width: 400px;
+  padding: 10px;
+  background-color: silver;
+  border-radius: 10px;
+  color: #2d2d2d;
+}
+
+.scenario-999-1 .smpl_container .scenario-999-1_close {
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  font-size: 24px;
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer;
+  color: #000;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_header h3 {
+  text-align: center;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content {
+  width: 100%;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form {
+  width: inherit;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form label {
+  width: inherit;
+  position: relative;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form label:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form label.textField::after {
+  content: '';
+  background-color: #5278bf;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px;
+  height: 34px;
+  width: 32px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form label[for='name']::after {
+  background-image: url("/themes/custom/multinet/images/form-icon/user.svg");
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form label[for='phone']::after {
+  background-image: url("/themes/custom/multinet/images/form-icon/call.svg");
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form label[for='email']::after {
+  background-image: url("/themes/custom/multinet/images/form-icon/email.svg");
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form label input {
+  width: 100%;
+  background-color: #ecf5ff;
+  border: solid 1px #dde2e6;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #15143a;
+  font-weight: 500;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form .scenario-999-1_submit button {
+  width: 100%;
+  background-color: #15143a;
+  color: #fff;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form .scenario-999-1_submit button:hover {
+  background-color: #5278bf;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form .scenario-999-1_footer label {
+  font-size: 12px;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form .scenario-999-1_footer label input {
+  width: initial;
+}
+
+.scenario-999-1 .smpl_container section.scenario-999-1_content form .scenario-999-1_footer label span {
+  margin-left: 5px;
+}
+/*# sourceMappingURL=style.css.map */

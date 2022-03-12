@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<script>
+$(document) .ready (function () {
+$(window) .scroll (function () {
+if($(this).scrollTop()>110) {
+$('.head-menu-main').css({
+    "position":"fixed",
+    "width":"100%",
+    "z-index":"9999999",
+    "left":"0",
+    "right":"0",
+    "top":"0"
+});
+} else {
+$('.head-menu-main').css({
+    "position":"",
+    "width":"",
+    "z-index":"",
+    "left":"",
+    "right":"",
+    "top":""
+});
+}
+});
+});
+</script>
+jQuery(document).ready(function(){
+jQuery(window).scroll(function(){
+if(jQuery(this).scrollTop()>110){
+jQuery('.head-menu-main').css({
+"position":"fixed",
+"width":"100%",
+"z-index":"9999999",
+"left":"0",
+"right":"0",
+"top":"0"
+});
+}else {
+jQuery('.head-menu-main').css({
+"position":"",
+"width":"",
+"z-index":"",
+"left":"",
+"right":"",
+"top":""
+});
+}
+});
+});
+
+const sendEvent = (eventKey, done) => {
+const trackingCode = 'l3vb0m7r';
+const visitorCode = Math.floor(Math.random() * 100000000 + 1);
+const sessionCode = Math.floor(Math.random() * 100000000 + 1);
+const hitCode = Math.floor(Math.random() * 100000000 + 1);
+const domain = 'www.hellosmpl.com';
+const getServiceUrl = (path, params) => {
+return "https://hit.8digits.com/" + path
++ "?trackingCode=" + trackingCode
++ "&visitorCode=" + visitorCode
++ "&sessionCode=" + sessionCode
++ "&domain=" + domain
++ "&hitCode=" + hitCode
++ "&path=&rnd=&"
++ Object.keys(params).map(key => key + '=' + params[key]).join('&');
+};
+const createImage = (source, onload) => {
+const image = new Image();
+image.src = source;
+image.onload = onload;
+};
+const hitUrl = getServiceUrl('hit', { obj: '' });
+const attrUrl = getServiceUrl('setattrs', { obj: encodeURIComponent(JSON.stringify(data)) });
+const eventUrl = getServiceUrl('event', { key: eventKey, value: '' });
+createImage(hitUrl, () => createImage(attrUrl, () => createImage(eventUrl, done)));
+};
+jQuery(window).scroll(function () {
+if (jQuery(this).scrollTop() > 110) {
+setLevel(LEVEL_JOIN, "shown-header")
+jQuery('.head-menu-main').css({
+"position": "fixed",
+"width": "100%",
+"z-index": "9999999",
+"left": "0",
+"right": "0",
+"top": "0"
+});
+jQuery("#MainMenu li a").click(function () {
+setLevel(LEVEL_JOIN, "click-link");
+var data = { data: jQuery(this).attr("href") }
+sendEvent("headerFix", data, () => { data.data });
+})
+} else {
+jQuery('.head-menu-main').css({
+"position": "",
+"width": "",
+"z-index": "",
+"left": "",
+"right": "",
+"top": ""
+});
+}
+});
+
+jQuery(document).ready(function(){
+jQuery(window).scroll(function(){
+if(jQuery(this).scrollTop()>110){
+jQuery('.head-menu-main').addClass("header-fix");
+}else {
+jQuery('.head-menu-main').removeClass("header-fix");
+}
+});
+});
+
+.header-fix{
+position:fixed;
+width: 100%;
+z-index: 9999999;
+left:0;
+right:0;
+top:0;
+}

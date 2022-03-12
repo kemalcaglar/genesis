@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>case12</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .bg-aqua {
+            background: aqua;
+        }
+        .bg-purple {
+            background: purple;
+        }
+        .bg-silver {
+            background: silver;
+        }
+        .bg-orange {
+            background: orange;
+        }
+        .bg-yellow {
+            background: yellow;
+        }
+        .box {
+            height: 100vh;
+        }
+        .box2 {
+            height: 242px;
+        }
+        .container {
+            width: 100%;
+        }
+        .col-4 {
+            width: 100%;
+        }
+        .col-3 {
+            width: calc((100% / 4 ) * 3);
+        }
+        .col-2 {
+            width: calc((100% / 4 ) * 2);
+        }
+        .col-1 {
+            width: calc((100% / 4 ) * 1);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-1">
+            <div class="box bg-aqua"></div>
+        </div>
+        <div class="col-2">
+            <div class="box2 bg-purple"></div>
+            <div class="row">
+                <div class="col-1">
+                    <div class="box2 bg-yellow"></div>
+                </div>
+                <div class="col-1">
+                    <div class="bg-aqua box2"></div>
+                </div>
+                <div class="col-1">
+                    <div class="bg-silver box2"></div>
+                </div>
+                <div class="col-1">
+                    <div class="bg-orange box2"></div>
+                </div>
+                <div class="col-4">
+                    <div class="bg-purple box2"></div>
+                </div>
+                <div class="col-1">
+                    <div class="bg-orange box2"></div>
+                </div>
+                <div class="col-1">
+                    <div class="bg-silver box2"></div>
+                </div>
+                <div class="col-1">
+                    <div class="bg-aqua box2"></div>
+                </div>
+                <div class="col-1">
+                    <div class="bg-yellow box2"></div>
+                </div>
+            </div>
+        </div>
+            <div class="col-1">
+                <div class="box bg-aqua"></div>
+            </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>yayın deneme</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .bg-blue {
+            background-color: blue;
+        }
+        .bg-bordo {
+            background-color: #1c0504;
+        }
+        .bg-aqua {
+            background-color: aqua;
+        }
+        .bg-pink {
+            background-color: hotpink;
+        }
+        .bg-karma {
+            background: linear-gradient(#1c0504 , hotpink);
+        }
+        .yazi1 {
+            color: #1c0504;
+        }
+        .yazi2{
+         color: blue;
+        }
+        .yazi3 {
+            color: #d39e00;
+        }
+        .box {
+            height: 100vh;
+        }
+        .box2 {
+            height: 400px;
+        }
+        .box3{
+            height: 169px;
+        }
+
+        .window-height {
+            height: 100vh;
+        }
+
+        #content,
+        aside {
+            height: 100vh;
+        }
+
+        #content {
+            width:100%;
+            padding: 20px;
+            overflow-y: scroll;
+        }
+        @media (max-width:993px) {
+            #content {
+                height: auto;
+                overflow-y:auto
+            }
+            aside {
+                height: 200px;
+            }
+        }
+        .container {
+            margin: 0 auto;
+        }
+        .container-fluid{
+            width: 100%;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .col-1 {
+            width: calc(100% / 8);
+        }
+        .col-2 {
+            width: calc((100% / 8) * 2);
+        }
+        .col-3 {
+            width: calc((100% / 8) * 3);
+        }
+        .col-4 {
+            width: calc((100% / 8) * 4);
+        }
+        .col-5 {
+            width: calc((100% / 8) * 5);
+        }
+        .col-6{
+            width: calc((100% / 8) * 6);
+        }
+        .col-7{
+            width: calc((100% / 8) * 7);
+        }
+        .col-8 {
+            width: calc((100% / 8) * 8);
+        }
+        
+        @media (min-width:577px) {
+            .container {
+             width: 540px;
+            }
+            .col-sm-1 {
+                width: calc(100% / 8);
+            }
+            .col-sm-2 {
+                width: calc((100% / 8) * 2);
+            }
+            .col-sm-3 {
+                width: calc((100% / 8) * 3);
+            }
+            .col-sm-4 {
+                width: calc((100% / 8) * 4);
+            }
+            .col-sm-5 {
+                width: calc((100% / 8) * 5);
+            }
+            .col-sm-6{
+                width: calc((100% / 8) * 6);
+            }
+            .col-sm-7{
+                width: calc((100% / 8) * 7);
+            }
+            .col-sm-8 {
+                width: calc((100% / 8) * 8);
+            }
+        }
+        @media (min-width:769px) {
+            .container {
+                width: 720px;
+            }
+            .col-md-1 {
+                width: calc(100% / 8);
+            }
+            .col-md-2 {
+                width: calc((100% / 8) * 2);
+            }
+            .col-md-3 {
+                width: calc((100% / 8) * 3);
+            }
+            .col-md-4 {
+                width: calc((100% / 8) * 4);
+            }
+            .col-md-5 {
+                width: calc((100% / 8) * 5);
+            }
+            .col-md-6{
+                width: calc((100% / 8) * 6);
+            }
+            .col-md-7{
+                width: calc((100% / 8) * 7);
+            }
+            .col-md-8 {
+                width: calc((100% / 8) * 8);
+            }
+        }
+        @media (min-width:993px) {
+            .container {
+                width: 960px;
+            }
+            .col-lg-1 {
+                width: calc(100% / 8);
+            }
+            .col-lg-2 {
+                width: calc((100% / 8) * 2);
+            }
+            .col-lg-3 {
+                width: calc((100% / 8) * 3);
+            }
+            .col-lg-4 {
+                width: calc((100% / 8) * 4);
+            }
+            .col-lg-5 {
+                width: calc((100% / 8) * 5);
+            }
+            .col-lg-6{
+                width: calc((100% / 8) * 6);
+            }
+            .col-lg-7{
+                width: calc((100% / 8) * 7);
+            }
+            .col-lg-8 {
+                width: calc((100% / 8) * 8);
+            }
+        }
+        @media (min-width:1200px) {
+            .container {
+                width: 1140px;
+            }
+            .col-xl-1 {
+                width: calc(100% / 8);
+            }
+            .col-xl-2 {
+                width: calc((100% / 8) * 2);
+            }
+            .col-xl-3 {
+                width: calc((100% / 8) * 3);
+            }
+            .col-xl-4 {
+                width: calc((100% / 8) * 4);
+            }
+            .col-xl-5 {
+                width: calc((100% / 8) * 5);
+            }
+            .col-xl-6{
+                width: calc((100% / 8) * 6);
+            }
+            .col-xl-7{
+                width: calc((100% / 8) * 7);
+            }
+            .col-xl-8 {
+                width: calc((100% / 8) * 8);
+            }
+        }
+        @media (min-width:1400px) {
+            .container {
+                width: 1320px;
+            }
+            .col-xxl-1 {
+                width: calc(100% / 8);
+            }
+            .col-xxl-2 {
+                width: calc((100% / 8) * 2);
+            }
+            .col-xxl-3 {
+                width: calc((100% / 8) * 3);
+            }
+            .col-xxl-4 {
+                width: calc((100% / 8) * 4);
+            }
+            .col-xxl-5 {
+                width: calc((100% / 8) * 5);
+            }
+            .col-xxl-6{
+                width: calc((100% / 8) * 6);
+            }
+            .col-xxl-7{
+                width: calc((100% / 8) * 7);
+            }
+            .col-xxl-8 {
+                width: calc((100% / 8) * 8);
+            }
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+           <div class="col-md-8 col-lg-2">
+               <aside class=" bg-aqua">
+                   fdsfsd
+               </aside>
+           </div>
+            <div class="col-md-8 col-lg-6">
+                <div id="content" >
+                    <article>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae lectus facilisis, maximus felis id, auctor diam. Vestibulum gravida, risus nec iaculis tristique, enim est vulputate dui, nec molestie elit enim quis orci. Nunc a arcu imperdiet, ornare sapien id, ornare arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet dignissim augue. Nulla facilisi. Praesent rutrum a tellus in sodales. Praesent vel eros et velit congue vestibulum ac sit amet libero. Nullam gravida vestibulum risus et rhoncus. Fusce nec scelerisque sem. Sed sollicitudin varius viverra.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

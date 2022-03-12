@@ -1,0 +1,84 @@
+.scenario-#{$scenarioId}-#{$variationId} {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  height: 100px;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .progress-container {
+    height: 1.8rem;
+    width: 45rem;
+    border-radius: 1.4rem;
+    background: #7BCBDB;
+    position: relative;
+
+    .smpl-circle-main {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .circle-span {
+        line-height: 21px;
+      }
+
+      .smpl-circle {
+        border: 1px solid #504566;
+        padding: 3px;
+        height: 23px;
+      }
+    }
+
+    .progress {
+      height: 100%;
+      width: 0;
+      border-radius: 1.4rem;
+      background: #504566;
+      transition: width 0.4s ease;
+    }
+
+    .progress-text-main {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .progress-text {
+        top: 10px;
+        position: relative;
+        font-weight: 600;
+        font-size: 11px;
+
+        @media only screen and (max-width: 768px) {
+          top: 0;
+          font-size: 9px;
+        }
+      }
+
+      .smpl-taniyalim {
+        position: relative;
+        right: -12px;
+      }
+
+      .smpl-butce {
+        position: relative;
+        right: -20px;
+
+        @media only screen and (max-width: 768px) {
+          right: -13px;
+        }
+      }
+
+      .smpl-bilgiler {
+        position: relative;
+        right: -20px;
+
+        @media only screen and (max-width: 768px) {
+          right: -8px;
+        }
+      }
+    }
+  }
+}

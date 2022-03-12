@@ -1,0 +1,60 @@
+ var html =`<div tabindex="2007" class="information-message online-warrant">
+                <span class="five-year-guarantee-icon"></span>
+                    <p>ONLINE GARANTİ UZATMA</p>
+                    <p>
+                        <span>Yatağınızın garanti süresini 2 yıldan 5 yıla uzatmak için
+                            <a href="https://perm.mobilpark.biz/Customer/IndexEmpty?permitRequestFormId=155" target="_blank">tıklayın.</a> 
+                        </span>
+                    </p>
+            </div>`
+jQuery("#headerin .col-md-7").prepend(html);
+
+
+
+.information-message {
+    float: left;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.information-message.online-warrant span {
+    font-size: 14px;
+    color: #202020;
+    white-space: nowrap;
+    line-height: normal;
+}
+.five-year-guarantee-icon {
+    float: left;
+    position: relative;
+    width: max-content !important;
+}
+
+.information-message.online-warrant p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0e0e0e;
+    padding: 0 10px;
+}
+
+.information-message p:last-child {
+    margin-right: 0;
+}
+
+    .five-year-guarantee-icon::after {
+        content: '\e98f';
+        font-family: icomoon;
+        font-size: 40px;
+        position: relative;
+        color: #0e0e0e;
+        float: right;
+        margin-left: 10px;
+    }
+
+    jQuery('.information-message.online-warrant a').click(function () {
+
+        setLevel(LEVEL_JOIN, "Click-link");
+
+      })

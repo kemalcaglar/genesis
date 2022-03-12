@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>menu</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background: #fbfbfb;
+        }
+
+        ul#ust-menu{
+            height: 60px;
+            width: 100vw;
+            background: #cccccc;
+            border-top-color: darkcyan;
+            border-bottom-color: darkcyan;
+            border-top-style: solid;
+            border-bottom-style: solid;
+        }
+        ul#ust-menu,
+        ul#ust-menu ul{
+            list-style: none;
+        }
+        ul#ust-menu > li {
+            float:left;
+            overflow: hidden;
+        }
+        ul#ust-menu li {
+            display:block;
+            width:100px;
+            height:50px;
+            line-height:50px;
+            text-align: center;
+        }
+        ul#ust-menu li a {
+            color:#000000;
+        }
+        .logo {
+            float: left;
+            width: 100px;
+            height: 50px;
+            margin: 5px 0px;
+        }
+
+        ul#ust-menu > li:hover {
+            width: 10vw;
+            position: relatıve;
+        }
+        ul#ust-menu > li:hover > a {
+              color: whıte;
+            position: relative;
+            z-index: 2;
+        }
+        ul#ust-menu > li:hover > ul {
+            position: absolute;
+            padding-top: 50px;
+            top:10px;
+            width: 10vw;
+            display:block;
+            background: darkcyan;
+            box-shadow:0 0 20px #000000;
+            overflow: hidden;
+            transition: all 0.3s;
+            border-radius: 15px ;
+        }
+
+    </style>
+
+</head>
+<body>
+    <ul id="ust-menu" >
+        <img class="logo ust-menu" src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" alt="logo">
+        <li><a href="#">ANASAYFA</a></li>
+        <li><a href="#">KADIN</a>
+            <ul>
+                <li><a href="#">Abiye</a></li>
+                <li><a href="#">Elbise</a></li>
+                <li><a href="#">Etek</a></li>
+                <li><a href="#">Hırka</a></li>
+                <li><a href="#">Takı</a></li>
+            </ul>
+        </li>
+        <li><a href="#">ERKEK</a>
+            <ul>
+                <li><a href="#">Takım Elbise</a></li>
+                <li><a href="#">Kazak</a></li>
+                <li><a href="#">Gömlek</a></li>
+                <li><a href="#">Pantolon</a></li>
+                <li><a href="#">Kaban</a></li>
+            </ul>
+        </li>
+        <li><a href="#">ÇOCUK</a>
+            <ul>
+                <li><a href="#">Biberon</a></li>
+                <li><a href="#">Emzik</a></li>
+                <li><a href="#">Eldiven</a></li>
+            </ul>
+        </li>
+        <li><a href="#">İLETİŞİM</a></li>
+    </ul>
+
+
+</body>
+</html>

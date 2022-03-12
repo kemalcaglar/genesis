@@ -1,0 +1,105 @@
+.bg-ebbt:after { background: url('../images/background.svg') no-repeat center center fixed; background-size:cover; }
+
+/* Component */
+
+    /* Aside */
+
+    #aside {
+        position        : fixed;
+        right           : 0;
+        bottom          : 0;
+        left            : 0;
+        top             : 0;
+    }
+
+    #aside .bg.vertical-middle.yukseklik {
+        height      : 100vh;
+    }
+
+    @media screen and (max-width:992px){
+
+        #aside {
+            position    : inherit;
+        }
+
+        #aside .bg.vertical-middle,
+        #aside-menu-parent {
+            height      : auto;
+            min-height      : auto !important;
+        }
+    }
+
+    /* Aside Menü */
+
+    #aside-menu a {
+        display         : block;
+        position        : relative;
+        font-family     : 'Barlow Condensed', sans-serif;
+        font-size       : 25px;
+        font-weight     : 300;
+        padding         : 3px 20px;
+        transition      : background 0.3s ease-out;
+    }
+
+    /* Kalan Zaman */
+
+    #kalan-zaman .sayi {
+        font-size       : 45px;
+        font-weight     : 600;
+    }
+
+    #kalan-zaman .yazi {
+        font-size       : 20px;
+        font-weight     : 600;
+        margin-bottom   : 20px;
+        margin-top      : -10px;
+    }
+
+    @media screen and (max-width:992px){
+
+        #kalan-zaman .sayi {
+            font-size       : 30px;
+        }
+
+        #kalan-zaman .yazi {
+            font-size       : 16px;
+            margin-bottom   : 5px;
+        }
+
+    }
+
+    /* Logo */
+
+    .logo {
+        right               : 0;
+        left                : 0;
+        top                 : 0;
+    }
+
+    @media screen and (max-width:992px) {
+        .logo {
+            position        : relative;
+        }
+    }
+
+    /* Mobile Menü */
+
+    #mobile-menu-container {
+        left                : -100vw;
+        right               : 100vw;
+        transition          : left 0.3s ease-out, right 0.3s ease-out;
+        z-index             : 10;
+    }
+
+    #mobile-menu-container.open-menu {
+        left:0;
+        right:0;
+    }
+
+    #mobile-menu li a {
+        font-size           : 20px;
+        font-weight         : 300;
+        padding             : 3px 0;
+        display             : block;
+    }
+

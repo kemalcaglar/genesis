@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1 class="baslik"> İşte Bu Kart!</h1>
+<div class="baslangic-text">Başlamak için tıkla!</div>
+<div id="kaybettin-text" class="baslangic-text ">Kaybettin!
+    <span class="baslangıc-text-kucuk" onclick="resetGame()">Yeniden oynamak için tıkla!</span>
+</div>
+<div id="kazandin-text" class="baslangic-text">Kazandın!
+    <span class="baslangic-text-kucuk" onclick="resetGame()">Yeniden oynamak için tıkla!</span>
+</div>
+<div class="oyun-container">
+    <div class="oyun-info-container">
+        <div class="oyun-info">
+            Süre <span id="zaman-sayaci">100</span>
+        </div>
+        <div class="oyun-info">
+            Hamle <span id="hamle">0</span>
+        </div>
+    </div>
+    <div id="kartlar">
+
+    </div>
+</div>
+<script src="css/script.js"></script>
+</body>
+</html>

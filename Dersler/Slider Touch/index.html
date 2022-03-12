@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+<section>
+<div id="swiper-slayt" class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="item">
+                <img id="fullscreen1" class="resim" src="https://www.renklinot.com/wp-content/uploads/do%C4%9Fa-mazara-4.jpg" alt="slider-image">
+                <div class="slide-text">
+                    <h1>Lorem İpsum</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <button>Daha fazlası..</button>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="item">
+                <img id="fullscreen2" class="resim" src="https://www.renklinot.com/wp-content/uploads/2012/02/do%C4%9Fa-manzaras%C4%B1-2.jpg" alt="slider-image">
+                <div class="slide-text">
+                    <h1>Lorem İpsum</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    <button>Daha fazlası..</button>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="item">
+                <img id="fullscreen3" class="resim" src="https://www.renklinot.com/wp-content/uploads/2012/02/%C5%9Fehir-manzaras%C4%B1-4.jpg" alt="slider-image" >
+                <div class="slide-text">
+                    <h1>Lorem İpsum</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <button>Daha fazlası..</button>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="item">
+                <img id="fullscreen4" class="resim" src="https://www.renklinot.com/wp-content/uploads/3D-manzara-2.jpg" alt="slider-image">
+                <div class="slide-text">
+                    <h1>Lorem İpsum</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <button>Daha fazlası..</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next" onclick="nextSlide()"></div>
+    <div class="swiper-button-prev" onclick="backSlide()"></div>
+    <div class="navigation-manuel">
+        <div  class="manuel-btn" onclick="screenOne()"></div>
+        <div  class="manuel-btn" onclick="screenTwo()"></div>
+        <div  class="manuel-btn" onclick="screenThree()"></div>
+        <div  class="manuel-btn" onclick="screenFour()"></div>
+    </div>
+</div>
+</section>
+<!--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        loop:true,1126 1501
+         swipperSlideWidth = document.getElementById('swiper-slayt').offsetWidth;
+        console.log(swipperSlideWidth);
+    });
+      /*function listenResize() {
+        window.addEventListener('resize', createConstants);
+    }*/
+
+</script> -->
+<script>
+    var index = 0;
+    const slides = document.getElementById('swiper-slayt');
+    const slidesInner = slides.querySelector('.swiper-wrapper');
+    function sliderCalc() {
+        setInterval(function (){
+            playSlider(index + 1);
+        },2000)
+    }
+    function nextSlide(){
+        sliderRun(index + 1);
+    }
+    function backSlide(){
+        sliderRun(index - 1);
+    }
+    function sliderRun(newIndex){
+        indexCalc(newIndex);
+        playSlider();
+    }
+    function indexCalc(newIndex){
+        let images = slidesInner.querySelectorAll('.resim');
+        if (newIndex >= images.length ){
+            index = 0
+        } else if ( newIndex <= 0 ) {
+            index = images.length - 1;
+        }else {
+            index = newIndex;
+        }
+    }
+    function playSlider(){
+        let slidesWidth = slides.clientWidth;
+        slidesInner.style.transform = `translate3d(${index * -slidesWidth}px, 0, 0)`
+    }
+    function screenOne(){
+        sliderRun(index = 0)
+    }
+    function screenTwo(){
+        sliderRun(index = 1)
+    }
+    function screenThree(){
+        sliderRun(index = 2)
+    }
+    function screenFour(){
+        sliderRun(index = 3)
+    }
+    function sliderTime(){
+        screenOne();
+        screenTwo();
+        screenThree();
+        screenFour();
+    }
+    sliderCalc();
+
+
+
+
+</script>
+</body>
+</html>

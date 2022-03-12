@@ -1,0 +1,48 @@
+<script>
+
+if(jQuery(".BasketItemCount").text().trim() > 0){
+    jQuery(".SepetButton").css({
+        "animation": "animationsz 2s infinite"
+    });
+    jQuery(".BasketItemCount").css("font-weight","bold");
+}
+
+
+
+
+#ae9a64
+</script>
+
+
+
+.Button-Animations {
+background: rgba(255, 255, 255, 0.6);
+}
+.Button-Animations:hover{
+
+background: rgba(255, 255, 255, 1);
+}
+
+@keyframes animationsz {
+0% {
+opacity: 0.5;
+background: #2c87a850;
+}
+
+100% {
+opacity: 1;
+background: #2c87a8;
+}
+}
+-------------------
+if(jQuery(".BasketItemCount").text().trim() > 0){
+setLevel(LEVEL_JOIN, "shown-basketButton")
+jQuery(".SepetButton").css({
+"animation": "animationsz 2s infinite"
+});
+jQuery(".BasketItemCount").css("font-weight","bold");
+}
+jQuery("#UserAndBasket .SepetButton a").click(function () {
+setLevel(LEVEL_JOIN, "click-link");
+})
+-------------------

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .btnSpeed:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 290%;
+            width: 140%;
+            background: #083B82;
+            transition: all .5s ease-in-out;
+            transform: translateX(-98%) translateY(-25%) rotate(45deg);
+        }
+
+        .btnSpeed:hover:after {
+            transform: translateX(-9%) translateY(-25%) rotate(45deg);
+        }
+
+        .btnSpeed {
+            overflow: hidden;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<li class="btnSpeed"><span><a href="/ofise-gigabit-hizlar-altyapi-sorgulama/">NE HIZ ALIRIM</a></span>
+    <!-- End Item -->
+</li>
+</body>
+</html>
+
+.smplBtnSpeed {
+border:2px solid #faa61a;
+border-radius: 7px 25px;
+}
+.smplBtnSpeed:hover {
+letter-spacing: .1em;
+transition: all .5s ease;
+border-radius: 25px 7px;
+}
+<script>
+    jQuery("#mgmenu1 ul li").last().find("span a").text("ALTYAPI SORGULA")
+    jQuery("#mgmenu1 ul li").last().addClass("smplBtnSpeed")
+
+
+</script>

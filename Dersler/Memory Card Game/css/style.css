@@ -1,0 +1,130 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Teko&display=swap');
+        @font-face {
+            font-family: 'Teko', sans-serif;
+        }
+        @font-face {
+            font-family: 'Indie Flower', cursive;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            background-image: url("http://bgfons.com/uploads/rainbow/rainbow_texture679.jpg");
+            background-size: cover;
+        }
+        .baslik {
+            font-family: 'Teko', sans-serif;
+            font-size: 3.5em;
+            text-align: center;
+        }
+        .oyun-info  {
+            font-family:'Indie Flower', cursive;
+            font-size: 2em;
+        }
+        .baslik, .oyun-info {
+            font-weight: bold;
+            color: white;
+        }
+        .oyun-info-container {
+            grid-column:  1 / -1;
+            display: flex;
+            justify-content: space-around;
+        }
+        .oyun-container #kartlar {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            grid-gap: 10px;
+            margin: 50px auto;
+            justify-content: center;
+            perspective: 500px;
+        }
+         .kart {
+            background-color: white;
+            height: 175px;
+            width: 125px;
+            position: relative;
+            border-radius: 12px;
+        }
+      .kart-yuz {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            border-width: 1px;
+            border-style: solid;
+            overflow: hidden;
+            transition: transform 500ms ease-in-out;
+            backface-visibility: hidden;
+        }
+      .kart-on {
+            transform: rotateY(180deg);
+        }
+        .kart-arka {
+            background-image: url("https://tcrf.net/images/thumb/5/58/Mother3-6.png/224px-Mother3-6.png");
+            background-size: cover;
+            background-position: center;
+            border-color: #9e3232;
+        }
+        .ts {
+            align-self: flex-start;
+            transform: translateY(10px);
+            transition: transform 100ms ease-in-out;
+        }
+        .sporcu {
+            align-self: flex-start;
+            transform: translateY(0);
+            transition: transform 100ms ease-in-out;
+        }
+        .kart.gorunurluk .kart-arka {
+            transform: rotateY(-180deg);
+        }
+        .kart.gorunurluk .kart-on {
+            transform: rotateY(0);
+        }
+        .baslangic-text {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            display: none;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #ffffff;
+            transition: background-color 500ms, font-size 500ms;
+            font-family: 'Indie Flower', cursive;
+        }
+        .baslangic-text.gorunurluk {
+            display: flex;
+            animation: overlay-grow 500ms forwards;
+        }
+        @keyframes overlay-grow {
+            from{
+                background-color: rgba(0,0,0,0);
+                font-size: 0;
+            }
+            to{
+                background-color: rgba(0,0,0,.8);
+                font-size: 10em;
+            }
+        }
+        .baslangic-text-kucuk {
+            font-size: .3em;
+        }
+        @media (max-width: 600px) {
+            .oyun-container #kartlar {
+                grid-template-columns: repeat(2,auto);
+            }
+            .oyun-info-container{
+                flex-direction: column;
+                align-items: center;
+            }
+        }

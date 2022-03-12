@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>case 11 deneme</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .box1 {
+            height: 100vh;
+        }
+        .bg-koyu {
+            background-color: #1c0504;
+        }
+        .yazi1 {
+            color: white;
+        }
+        .sabit{
+            position: fixed;
+        }
+        .container {
+            width:100%;
+        }
+        .col-8 {
+            width: 100%;
+        }
+        .col-7{
+            width: calc((100% / 8) * 7);
+        }
+        .col-6{
+            width: calc((100% / 8) * 6);
+        }
+        .col-5{
+            width: calc((100% / 8) * 5);
+        }
+        .col-4{
+            width: calc((100% / 8) * 4);
+        }
+        .col-3{
+            width: calc((100% / 8) * 3);
+        }
+        .col-2{
+            width: calc((100% / 8) * 2);
+        }
+        .col-1{
+            width: calc((100% / 8) * 1);
+        }
+        @media  (max-width: 577px){
+            .container{
+                width: 540px;
+            }
+            .col-sm-8 {
+                width: 100%;
+            }
+            .col-sm-7{
+                width: calc((100% / 8) * 7);
+            }
+            .col-sm-6{
+                width: calc((100% / 8) * 6);
+            }
+            .col-sm-5{
+                width: calc((100% / 8) * 5);
+            }
+            .col-sm-4{
+                width: calc((100% / 8) * 4);
+            }
+            .col-sm-3{
+                width: calc((100% / 8) * 3);
+            }
+            .col-sm-2{
+                width: calc((100% / 8) * 2);
+            }
+            .col-sm-1{
+                width: calc((100% / 8) * 1);
+            }
+            .box1 {
+                height: 300px;
+                width: 100vw;
+            }
+            .bg-koyu {
+                background-color: #2ad0d4;
+            }
+            .yazi1 {
+                color: #000000;
+            }
+            .sabit{
+                position: fixed;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="sabit col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1">
+                <div class="bg-koyu box1 yazi1">KEMAL ÇAĞLAR</div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

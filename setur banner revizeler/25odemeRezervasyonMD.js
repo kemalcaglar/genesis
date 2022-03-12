@@ -1,0 +1,644 @@
+
+(function () {
+    if (EightDigits.sf.prototype.hasOwnProperty("Kismi_Odeme_Banner_Rezervasyon")) {
+        return false
+    }
+    EightDigits.sf.prototype.Kismi_Odeme_Banner_Rezervasyon = function () {
+
+        var config = {
+            scenarioname: "Kismi_Odeme_Banner_Rezervasyon",
+            analytics: "Kismi_Odeme_Banner_Rezervasyon",
+            controlgroup: 0
+        };
+
+        var main = {
+            "factory": function () {
+                return true;
+            }
+        };
+
+      
+        main.factory.prototype = {
+            random: function () {
+                var randomVal = 0;
+                var randomControlRatio = config.controlgroup > 50 ? config.controlgroup : 100 - config.controlgroup;
+                if (EightDigits.utils.getCookie('_ed_' + config.scenarioname) == null) {
+                    randomVal = Math.floor((Math.random() * 10000) + 1);
+                    EightDigits.utils.setCookie('_ed_' + config.scenarioname, randomVal);
+                } else {
+                    randomVal = parseInt(EightDigits.utils.getCookie('_ed_' + config.scenarioname));
+                }
+                if (randomVal <= 100 * randomControlRatio) {
+                    return true;
+                } else {
+                    return false;
+                }
+            },
+            
+            start: function () {
+                jQuery('.panel a').click()
+    var style = "\
+    <style>\
+    .smpl-odemeBanner-text{\
+        text-align: center;\
+        line-height: 19px;\
+        font-size: 14px;\
+        margin: 0 6px;\
+        color:white;\
+    }\
+    .smpl-odemeBanner-tooltip-container i{\
+        -moz-osx-font-smoothing: grayscale;\
+        -webkit-font-smoothing: antialiased;\
+        display: inline-block;\
+        font-style: normal;\
+        font-variant: normal;\
+        text-rendering: auto;\
+        line-height: 1;\
+        font-size:17px;\
+        margin-right:10px;\
+        color:white;\
+    }\
+    .smpl-odemeBanner-tooltip-container{\
+        background:orange;\
+        display:inline-block;\
+        color:#4bca63;\
+        padding:15px;\
+        font-size:13px;\
+        cursor:pointer;\
+        position:relative;\
+        width:100%;\
+        display:flex;\
+        align-items:center;\
+        justify-content:center;\
+        margin-bottom:30px;\
+        margin-top: -25px !important;\
+    }\
+    .smpl-odemeBanner-tooltip{\
+        background: #555;\
+        padding: 12px;\
+        position: absolute;\
+        top: 62px;\
+        color: white;\
+        width: 280px;\
+        text-align: center;\
+        z-index: 900;\
+        border-radius: 6px;\
+        font-size: 12px;\
+        line-height: 1.5em;\
+        left:calc(50% - 140px);\
+    }\
+    .smpl-odemeBanner-tooltip:after{\
+        background: #555;\
+        width: 20px;\
+        height: 20px;\
+        content: '';\
+        position: absolute;\
+        top: -8px;\
+        transform: rotate(45deg);\
+        left: calc(50% - 20px);\
+        z-index: 0;\
+        border-radius: 3px;\
+    }\
+    </style>\
+    ";
+  
+    jQuery('head').append(style);
+
+if(window.innerWidth>767){
+
+    jQuery('.booking-item-passengers').after('<div  class="smpl-odemeBanner-tooltip-container" ><i class="fa fa-bell" ></i><span class="smpl-odemeBanner-text"> %25’ini önden öde indirimli fiyatları garantile</span><div class="smpl-odemeBanner-tooltip" style="display:none;">Otel ücretinin min %25’nin rezervasyon anında ödenmesi, kalan bakiyenin de en geç otele girişten 3 gün öncesine kadar tamamlanması gerekmektedir.<span style="display:block;margin-top:10px;">Ön ödemeli rezervasyon yapılabilmesi için iptal güvencesi hizmetinin rezervasyonla birlikte alınması gerekmektedir.</span></div></div>');
+
+
+
+    if (!EightDigits.utils.getCookie('ed-' + config.analytics + '-shown')) {
+        EightDigits.analytics.sendEvent(config.analytics, 'shown-bannerDesktop');
+        EightDigits.utils.setCookie('ed-' + config.analytics + '-shown', 'on')
+    }
+jQuery('.smpl-odemeBanner-tooltip-container').mouseenter(function(){
+    if (!EightDigits.utils.getCookie('ed-' + config.analytics + '-hover')) {
+        EightDigits.analytics.sendEvent(config.analytics, 'hover-bannerDesktop');
+        EightDigits.utils.setCookie('ed-' + config.analytics + '-hover', 'on')
+    }
+jQuery('.smpl-odemeBanner-tooltip').show()
+}).mouseleave(function(){
+jQuery('.smpl-odemeBanner-tooltip').hide()
+})
+}
+else{
+    jQuery('.booking-item-passengers').after('<div  class="smpl-odemeBanner-tooltip-container" ><i class="fa fa-bell" ></i><span class="smpl-odemeBanner-text"> %25’ini önden öde indirimli fiyatları garantile</span><div class="smpl-odemeBanner-tooltip" style="display:none;">Otel ücretinin min %25’nin rezervasyon anında ödenmesi, kalan bakiyenin de en geç otele girişten 3 gün öncesine kadar tamamlanması gerekmektedir.<span style="display:block;margin-top:10px;">Ön ödemeli rezervasyon yapılabilmesi için iptal güvencesi hizmetinin rezervasyonla birlikte alınması gerekmektedir.</span></div></div>');
+jQuery('.smpl-odemeBanner-tooltip-container').css("padding","12px")
+
+jQuery('.smpl-odemeBanner-text').css("margin","0px")
+
+if(window.innerWidth<330){
+    jQuery('.smpl-odemeBanner-text').css("font-size","11px")
+}
+else if(window.innerWidth<354){
+    jQuery('.smpl-odemeBanner-text').css("font-size","12px")
+
+}
+else if(window.innerWidth<380){
+    jQuery('.smpl-odemeBanner-text').css("font-size","13px")
+
+}
+if (!EightDigits.utils.getCookie('ed-' + config.analytics + '-shown')) {
+    EightDigits.analytics.sendEvent(config.analytics, 'shown-bannerMobile');
+    EightDigits.utils.setCookie('ed-' + config.analytics + '-shown', 'on')
+}
+
+jQuery('.smpl-odemeBanner-tooltip-container').mouseleave(function(){
+jQuery('.smpl-odemeBanner-tooltip').hide()
+}).click(function(){
+    if (!EightDigits.utils.getCookie('ed-' + config.analytics + '-click')) {
+        EightDigits.analytics.sendEvent(config.analytics, 'click-bannerMobile');
+        EightDigits.utils.setCookie('ed-' + config.analytics + '-click', 'on')
+    }
+jQuery(this).find('.smpl-odemeBanner-tooltip').toggle()
+})
+}
+
+
+
+            },
+            control: function () {
+                var arr = [
+                    "1774 Kazdağı Termal Butik Otel",
+                    "Abant Aden Boutique Hotel",
+                    "Abant Palace",
+                    "Acapulco Resort & Convention & Spa",
+                    "Acropol Of Bodrum Beach Hotel ",
+                    "Acroter Hotel & SPA",
+                    "Adalya Elite Lara Hotel",
+                    "Adam & Eve",
+                    "Adramis Termal Hotel",
+                    "Adrasan Klados Hotel",
+                    "Adrasan La Casita Hotel",
+                    "Adrina Termal Health&Spa Hotel",
+                    "Akrones Thermal Spa Convention Sport Hotel",
+                    "Akyaka Gümüş Konak",
+                    "Alaçatı Marina Palace Butik Otel",
+                    "Alaroof Butik Otel",
+                    "Alba Queen Hotel ",
+                    "Alba Resort Hotel ",
+                    "Alba Royal Hotel ",
+                    "Alkan Hotel",
+                    "Almira Hotel Thermal Spa & Convention Center",
+                    "Altın Yunus Resort & Thermal Hotel",
+                    "Amon Hotels Belek",
+                    "Annabella Diamond Hotel & Spa",
+                    "Annabella Park Hotel",
+                    "Antakya Ottoman Palace Thermal Resort & Spa",
+                    "Aphrodite Hotel Bozburun",
+                    "Aqua Fantasy Aquapark Hotel & Spa",
+                    "Aquaworld Belek By Mp Hotels",
+                    "Arnor De Luxe Hotel & Spa",
+                    "Asel Hotel Didim",
+                    "Assos Behram Hotel",
+                    "Assos Eden Beach Hotel",
+                    "Assos Eden Gardens Hotel",
+                    "Assos Kervansaray Hotel",
+                    "Assos Nazlıhan Hotel",
+                    "Assos Nazlıhan Spa Hotel",
+                    "Assos Park Hotel",
+                    "Asteria Venüs Didim",
+                    "Asteria Zeus Didim",
+                    "Aurasia Beach Hotel",
+                    "Aurasia City Hotel",
+                    "Aydeniz Apart Otel",
+                    "Aydeniz Otel",
+                    "Ayvalık Palas Hotel",
+                    "Azka Otel & Spa",
+                    "Azure By Yelken",
+                    "B Business Hotel & Spa",
+                    "BC Spa Hotel",
+                    "Belkon Hotel",
+                    "Bella Resort & Spa",
+                    "Black Bird Thermal Hotel & Spa",
+                    "Blue Bay Beach Hotel",
+                    "Blue Marlin Deluxe Spa & Resort",
+                    "Blue Paradise Side Hotel",
+                    "Blue Waters Club",
+                    "BN Hotel Thermal & SPA",
+                    "Bodrium Hotel &You SPA",
+                    "Bolu Koru Hotels Spa & Convention",
+                    "Bonjo Club Resort",
+                    "Boyalık Beach Hotel & SPA",
+                    "Budan Thermal Spa Hotel & Convention Center",
+                    "Bumerang Suites Hotel",
+                    "Butikhan Beach & Deluxe",
+                    "Büyük Abant Oteli & Kongre Merkezi",
+                    "Calido Maris Hotel",
+                    "Can Garden Beach",
+                    "Cape Krio Boutique Hotel & Spa",
+                    "Casa Sur Antalya",
+                    "Cennet Life Otel",
+                    "Champion Holiday Village",
+                    "Cihantürk Hotel",
+                    "Class Beach Otel",
+                    "Club Barbarossa",
+                    "Club Hotel Anjeliq",
+                    "Club Hotel Falcon",
+                    "Club Hotel Letoonia Fethiye",
+                    "Club Hotel Sera",
+                    "Club Hotel Turan Prince World",
+                    "Club Marco Polo",
+                    "Club Marma Hotel",
+                    "Club Resort Atlantis",
+                    "Club Throne Beach",
+                    "Concorde Luxury Resort Casino Convention & SPA",
+                    "Concordia Celes Hotel",
+                    "Cornelia De Luxe Resort",
+                    "Cornelia Diamond Golf Resort & Spa",
+                    "Costa Bodrum City",
+                    "Crystal Admiral Resort Suites & Spa",
+                    "Crystal Aura Beach Resort & Spa",
+                    "Crystal Boutique Beach Resort",
+                    "Crystal Club World Of Colours",
+                    "Crystal Deluxe Resort & Spa",
+                    "Crystal Family Resort & Spa",
+                    "Crystal Flora Beach Resort",
+                    "Crystal Green Bay Resort & Spa",
+                    "Crystal Palace Luxury Resort & Spa",
+                    "Crystal Paraiso Verde Resort & Spa",
+                    "Crystal Sunrise Queen Luxury Resort & Spa",
+                    "Crystal Sunset Luxury Resort & Spa",
+                    "Crystal Tat Beach Golf Resort & Spa",
+                    "Crystal Waterworld Resort & Spa",
+                    "Cunda Esen Hotel",
+                    "Cunda Fora Hotel",
+                    "Cunda Kıvrak Otel",
+                    "Cunda Oteli",
+                    "Cunda Poseidon Otel",
+                    "Çamkar Otel",
+                    "Çeşme Köy Otel",
+                    "Çıralı Marina Loft",
+                    "Çomça Manzara Oteli",
+                    "Dalya Resort Hotel",
+                    "Dalyan Arda Villas",
+                    "Dalyan Live Spa Resort Hotel",
+                    "Dalyan Resort Hotel",
+                    "Dalyan Resort Spa Hotel",
+                    "Daphnis Hotel",
+                    "Datça Suites Butik Otel",
+                    "deneme extranet",
+                    "Deniz Kızı Hotel",
+                    "Deniz Kızı Royal",
+                    "Diamond De Luxe Hotel & Spa",
+                    "Diamond Hill Resort Hotel",
+                    "Dikili Papaya Evleri",
+                    "Dionisus Hotel",
+                    "Dome Hotel",
+                    "Doria Hotel Bodrum",
+                    "Dorman Suites Hotel ",
+                    "Double Tree By Hilton Kuşadası",
+                    "Dream Family Club",
+                    "Dream World Aqua",
+                    "Dream World Hill",
+                    "Dream World Palace Hotel",
+                    "Dream World Resort",
+                    "Ece Saray Marina Resort",
+                    "Efruze Otel",
+                    "Ege Birlik Boutique",
+                    "Egelia İmroz Otel",
+                    "Egemen Butik Otel",
+                    "Ekici Hotel",
+                    "El Mundo Suites",
+                    "El Vino Hotel Suites",
+                    "Ela Quality Resort Belek",
+                    "Elegance East Hotel",
+                    "Elegance Hotels International",
+                    "Elementa Hotel",
+                    "Elexus Hotel Resort Casino",
+                    "Elite Hotel Yalıkavak",
+                    "Elite World Marmaris Otel",
+                    "Elite World Sapanca Convention&Wellness Resort  ",
+                    "Eliz Hotel Convention Center Thermal Spa Wellness",
+                    "En Vie Beach Boutique Hotel",
+                    "EvN Hotel Dalyan",
+                    "Fame Residence Göynük",
+                    "Fame Residence Kemer & SPA Hotel",
+                    "Fame Residence Lara & SPA Hotel",
+                    "Faustina Hotel & Spa",
+                    "Fimar Life Thermal Resort Hotel",
+                    "Flora Hotel",
+                    "Foça Kumsal Hotel",
+                    "Foçamor Otel",
+                    "Gazelle Resort & Spa",
+                    "Gloria Verde Resort",
+                    "Golden Life Blue Green & Pasham Hotel",
+                    "Golden Life Heights Deluxe Suit Hotel",
+                    "Golden Life Resort Hotel Spa",
+                    "Golden Life Z Exclusive Hotel",
+                    "Göcek Lykia Resort Hotel",
+                    "Gönlüferah Thermal & Spa Hotel",
+                    "Gönülhan Otel Alaçatı",
+                    "Grand Okan Hotel",
+                    "Grand Park Kemer",
+                    "Grand Park Lara",
+                    "Grand Temizel",
+                    "Grand Yazıcı Club Marmaris Palace",
+                    "Grand Yazıcı Club Turban Thermal Hotel",
+                    "Green Boutique Hotel",
+                    "Green Hills Suites",
+                    "Green Nature Diamond Otel",
+                    "Green Nature Resort & Spa",
+                    "Green Paradise Beach Hotel",
+                    "Greenport Hotel Bodrum",
+                    "Grida City Antalya",
+                    "Gulet Hotel",
+                    "Gülümser Hatun Termal",
+                    "Gümüldür Mavi Deniz Otel",
+                    "Habesos Hotel",
+                    "Habitat Otel Sarıkamış",
+                    "Hadrianus Hotel",
+                    "Han Deluxe Hotel",
+                    "Hapimag Sea Garden Resort",
+                    "Hawaii Hotel",
+                    "Haydarpasha Palace",
+                    "Hedef Beach Resort Hotel",
+                    "Hedef Kleopatra Golden Sun",
+                    "Hedef Kleopatra Sand Hotel",
+                    "Hedef Resort & Spa",
+                    "Hera Hotel",
+                    "Herakles Thermal Otel",
+                    "Herodot Beach Hotel ",
+                    "Hillstone Bodrum Hotel & Spa",
+                    "Hilton Dalaman Sarıgerme Resort & Spa",
+                    "Honeymoon Beach Hotel",
+                    "Hotel  Manas Park Ölüdeniz",
+                    "Hotel Berke Ranch",
+                    "Hotel Green Gold",
+                    "Hotel Su",
+                    "Hotel Turan Prince",
+                    "Huri & Nuri Hotel",
+                    "Infinity City Hotel",
+                    "Innvista Hotels Belek ",
+                    "İda Taş Konak",
+                    "İdahan Hotel",
+                    "İdaş Club Hotel",
+                    "İdaş Hotel",
+                    "İkbal Thermal Hotel & Spa",
+                    "İlayda Avantgarde Hotel",
+                    "İlayda Hotel",
+                    "İncekum Beach Resort",
+                    "İnfinity By Yelken Aquapark & Resort",
+                    "Jasmin Beach Resort",
+                    "Jura Hotels Afyon Thermal",
+                    "Justiniano Deluxe Resort",
+                    "Kairaba Blue Dreams Resort & Spa",
+                    "Kalif Hotel",
+                    "Kalinda Inn Otel",
+                    "Kapya Hotel",
+                    "Kars-ı Şirin Otel",
+                    "Kasr-ı Serçehan Butik Otel",
+                    "Katina Hotel",
+                    "Katre Hotel",
+                    "Kaya Green Park Hotel",
+                    "Kaya İzmir Thermal & Convention",
+                    "Kaya Palazzo Resort & Casino",
+                    "Kaya Palazzo Resort & Residences Bodrum",
+                    "Kazdağları Reis Inn Hotel & Spa",
+                    "Kemer Park Otel",
+                    "Kemerlihan Deluxe Hotel",
+                    "Kerme Ottoman Alaçatı",
+                    "Kerme Ottoman Gökova",
+                    "Kerme Ottoman Palace",
+                    "Kimera Lounge Hotel",
+                    "Kimeros Park Holiday Village",
+                    "Kirman Arycanda Deluxe",
+                    "Kirman Belazur Resort & Spa",
+                    "Kirman Calyptus Resort & Spa",
+                    "Kirman Leodikya Resort & Spa",
+                    "Kirman Sidemarin Beach & Spa",
+                    "Kirman Sidera Luxury & Spa",
+                    "Kleopatra Ada Beach Hotel",
+                    "Kleopatra Ada Hotel",
+                    "Kleopatra Beach Hotel",
+                    "Kleopatra Royal Palm Hotel",
+                    "Koala Bungalows",
+                    "Korel Thermal Resort Clinic & Spa",
+                    "Korsan Ada Hotel",
+                    "Kuştur Club Holiday Village",
+                    "La Kumsal Hotel",
+                    "La Petra Otel",
+                    "La Quinta by Wyndham Bodrum",
+                    "La Vista Boutique Hotel & SPA",
+                    "Land Of Paradise Beach",
+                    "Laren Family  Hotel & Spa",
+                    "Laren Seaside Hotel & Spa",
+                    "Larissa Hotel Beldibi",
+                    "Larissa Sultan’s Beach Hotel",
+                    "Leman Hotel",
+                    "Lidya Sardes Thermal & Spa Hotel",
+                    "Limak Atlantis De Luxe Hotel & Resort",
+                    "Limak Cyprus Deluxe Hotel",
+                    "Limak Lara De Luxe Hotel & Resort",
+                    "Limak Limra Hotel & Resort",
+                    "Limak Thermal Boutique Hotel",
+                    "Limonade Pansiyon",
+                    "Liona Hotel",
+                    "Liona Residence",
+                    "Lord's Palace Hotel & Spa & Casino",
+                    "Lujo Bodrum",
+                    "Lycus River Thermal & Spa Hotel",
+                    "Magnolia Hotel",
+                    "Maia Luxury Beach Hotel & Spa",
+                    "Manastır Otel & Suit",
+                    "Marbel Hotel By Palm Wings",
+                    "Mare Garden Otel",
+                    "Marina Boutique Fethiye Nidya Hotel",
+                    "May Thermal Resort & SPA",
+                    "Megaş Hotel",
+                    "Melas Lara Hotel",
+                    "Merit Crystal Cove Hotel & Casino",
+                    "Merit Lefkoşa Hotel & Casino",
+                    "Merit Park Hotel & Casino",
+                    "Merit Royal Hotel & Casino & Spa",
+                    "Merit Royal Premium Hotel & Casino",
+                    "Mert Seaside Hotel",
+                    "Mimoza Apart Güllük",
+                    "Mimoza Beach Hotel",
+                    "Minu Hotel",
+                    "Mirage Park Resort",
+                    "Miramar Hotel",
+                    "Monachus Hotel & Spa",
+                    "Mountain Lodge",
+                    "Mulka Hotel",
+                    "My Green Boutique Hotel",
+                    "My Marin Hotel",
+                    "Narcia Resort Side",
+                    "Nashira Resort Hotel & Aqua Spa",
+                    "Nevada Hotel & Spa",
+                    "NG Afyon",
+                    "Ng Sapanca Enjoy",
+                    "NG Sapanca Wellness & Convention",
+                    "Notion Kesre Beach Hotel & Spa",
+                    "Nova Beach Hotel",
+                    "Nova Park Hotel",
+                    "Obam Termal Resort Otel&Spa",
+                    "Oda Bodrum",
+                    "Oksijen Zone Hotels Uludağ",
+                    "Orcey Hotel",
+                    "Oruçoğlu Termal Resort Afyon",
+                    "Otium Family Eco Club",
+                    "Otium Park Club Akman",
+                    "Ören Konak Otel",
+                    "Örsmaris Boutique Hotel",
+                    "Özlem Garden Hotel",
+                    "Palm Wings Beach Resort & Spa Kuşadası",
+                    "Palm Wings Ephesus Beach Resort",
+                    "Park Aqua Rooms Otel",
+                    "Pavel'in Yeri Butik Otel",
+                    "Petrino Gökçeada Hotel & Kitchen",
+                    "Pırıl Hotel Thermal & Beauty Spa",
+                    "Pine Beach Belek",
+                    "Pine Club Boutique Hotel & Spa",
+                    "Porto Bello Hotel Resort & Spa",
+                    "Premier Nergis Beach Hotel",
+                    "Queen's Park Göynük",
+                    "Queen's Park Le Jardin Resort & Spa",
+                    "Radisson Blu Resort & Spa Çeşme",
+                    "Ramada By Wyndham Bursa Çekirge Termal & Spa",
+                    "Ramada Resort Bodrum",
+                    "Ramada Resort Kazdağları Thermal & Spa",
+                    "Regnum Carya",
+                    "Rhapsody Hotel Kaş",
+                    "Richmond Nua Wellness Spa Sapanca",
+                    "Rixos Downtown Antalya",
+                    "Robinson Club Çamyuva",
+                    "Robinson Club Nobilis",
+                    "Robinson Club Pamfilya",
+                    "Robinson Club Sarıgerme Park",
+                    "Room Room Motel",
+                    "Royal Alhambra Palace Hotel",
+                    "Royal Asarlık Beach Hotel & Spa",
+                    "Royal Dragon Hotel",
+                    "Royal Holiday Palace Hotel",
+                    "Royal Seginus Hotel",
+                    "Royal Taj Mahal Hotel",
+                    "Royal Wings Hotel",
+                    "Safir Hotel",
+                    "Safran Thermal Resort Hotel Spa & Convention Center",
+                    "Sahil Martı",
+                    "Salamis Bay Conti Resort & Hotel",
+                    "Salbakos Herakleia Boutique Hotel",
+                    "Salmakis Otel Bodrum",
+                    "Samira Resort",
+                    "Sandıklı Thermal Park Hotel",
+                    "Sapanca Alfa Suites & Spa",
+                    "Sarot Thermal Park Resort & Spa",
+                    "Saylam Suites Kaş",
+                    "Sea Bird Hotel",
+                    "Seher Resort & Spa",
+                    "Seher Sun Palace Resort & Spa",
+                    "Sertil Royal Forest Hotel",
+                    "Sesin Hotel Marmaris",
+                    "Seven Seas Hotel Blue",
+                    "Seven Seas Hotel Life",
+                    "Sığacık Marina Apart Hotel",
+                    "Side Erenler Hotel",
+                    "Side Kum Hotel",
+                    "Side Premium",
+                    "Side Sun Hotel",
+                    "Siz İnn Otel Urla",
+                    "Son Vapur Butik Otel",
+                    "Sonnen Hotel ",
+                    "Star Hotel Fethiye",
+                    "Starlight Resort Hotel",
+                    "Sueno Hotels Beach",
+                    "Sueno Hotels Deluxe Belek",
+                    "Sueno Hotels Golf Belek",
+                    "Sunrise Resort Hotel",
+                    "Susesi Luxury Resort",
+                    "Şahin Motel & Restaurant",
+                    "Şenyıldız Hotel",
+                    "Telmessos Select Hotel",
+                    "Temple Miletos & Spa Hotel",
+                    "Terrace Beach Resort",
+                    "The Bay Beach Club",
+                    "The Best Life Hotel Bodrum Center",
+                    "The Colony Hotel",
+                    "The Corner Park Hotel",
+                    "The Green Park Hotels & Resort Kartepe",
+                    "The Land of Legends Kingdom Otel",
+                    "The Lumos Deluxe",
+                    "The Marmara Antalya",
+                    "The Marmara Bodrum",
+                    "The Oba Hotel",
+                    "The Sansa Hotel & Spa",
+                    "Throne Beach Resort & Spa",
+                    "Trendy Aspendos Beach",
+                    "True Blue Boutique Hotel",
+                    "Tui Blue Ephesus Otel & Aqua Fantasy Aqua Park Tatil Köyü",
+                    "Turay Hotel",
+                    "Türkbükü Hill Hotel & Beach",
+                    "Urla Pier Hotel",
+                    "Utopia World Hotel",
+                    "Venezia Palace Deluxe Resort",
+                    "Venosa Beach Resort Spa",
+                    "Viento Hotel Alaçatı",
+                    "Villa Anfora Datça Hotel",
+                    "Villa Side Hotel",
+                    "Villa Side Residence",
+                    "Vita Bella Resort Hotel & Spa",
+                    "Vois Form Termal Otel",
+                    "VONResort Abant",
+                    "VONResort Elite",
+                    "VONResort Golden Beach Hotel",
+                    "VONResort Golden Coast Hotel",
+                    "Wonasis Resort & Aqua Hotel",
+                    "World City Otel Alaçatı ",
+                    "Xanadu Island",
+                    "Xanadu Resort Hotel",
+                    "Yacht Boheme Hotel",
+                    "Yalı Apart Bodrum",
+                    "Yalı Park Beach Hotel",
+                    "Yalova Termal Saray Hotel",
+                    "Yelken Mandalinci Spa & Wellness Hotel",
+                    "Yeniçeri City Hotel",
+                    "Zephyros Hotel",
+                    "Zeynep Hotel",
+                    "Zeytin Arası Apart Otel",
+                    "Zeytinada Otel",
+                ]
+                  if(arr.find(x=>x==jQuery('.booking-item-payment-title').text().trim()) === undefined){
+                return false;
+                  }
+                  if(window.location.pathname!=="/Rezervasyon-Bilgileri"){
+                      return false;
+                  }
+            },
+            init: function () {
+                if (main.factory.prototype.control() == false) {
+                    return false
+                }
+                var _exec = main.factory.prototype.random();
+                if (!_exec) {
+                    if(window.innerWidth>767){
+                        if (!EightDigits.utils.getCookie('ed-' + config.analytics + '-notshown')) {
+                            EightDigits.analytics.sendEvent(config.analytics, 'notShown-bannerDesktop');
+                            EightDigits.utils.setCookie('ed-' + config.analytics + '-notshown', 'on')
+                        }
+                    }
+                    else{
+                        if (!EightDigits.utils.getCookie('ed-' + config.analytics + '-notshown')) {
+                            EightDigits.analytics.sendEvent(config.analytics, 'notShown-bannerMobile');
+                            EightDigits.utils.setCookie('ed-' + config.analytics + '-notshown', 'on')
+                        }
+                    }
+                    return false;
+                }
+                main.factory.prototype.start();
+            }
+        };
+
+        boot = function () {
+            return main.factory.prototype.init();
+        };
+
+        boot();
+
+    };
+    var _ed_Kismi_Odeme_Banner_Rezervasyon = new EightDigits.sf();
+    _ed_Kismi_Odeme_Banner_Rezervasyon.Kismi_Odeme_Banner_Rezervasyon();
+})();

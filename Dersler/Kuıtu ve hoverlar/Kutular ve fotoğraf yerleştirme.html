@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/PC1/Downloads/case9%20(3).html -->
+<html lang="tr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Case 9 | Flex</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin:0;
+            padding:0;
+            display:flex;
+            justify-content: center;
+        }
+
+        .bg-dark {
+            background: #444444;
+        }
+
+        .bg-dark-silver {
+            background: #999999;
+        }
+
+        .box {
+            height:200px;
+            margin-bottom:20px;
+        }
+
+        .img {
+            width: 100%;
+            height:auto;
+            display:block;
+        }
+
+        .img-1 {
+            background: url("https://cdn.pixabay.com/photo/2020/09/26/07/19/grapes-5603367_1280.jpg") center center no-repeat;
+        }
+
+        .img-2 {
+            background: url("https://cdn.pixabay.com/photo/2015/02/13/00/43/apples-634572_1280.jpg") center center no-repeat;
+        }
+
+        .row {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin:0 -10px;
+        }
+
+        .row > .col-4,
+        .row > .col-3,
+        .row > .col-2,
+        .row > .col-1 {
+            padding: 0 10px;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .col-4 {
+            width: 100%;
+        }
+
+        .col-3 {
+            width: calc((100% / 4) * 3);
+        }
+
+        .col-2 {
+            width: calc((100% / 4) * 2);
+        }
+
+        .col-1 {
+            width: calc(100% / 4);
+        }
+
+        @media (min-width: 577px) {
+
+            .container {
+                width: 540px;
+            }
+
+            .col-sm-4 {
+                width: 100%;
+            }
+
+            .col-sm-3 {
+                width: calc((100% / 4) * 3);
+            }
+
+            .col-sm-2 {
+                width: calc((100% / 4) * 2);
+            }
+
+            .col-sm-1 {
+                width: calc(100% / 4);
+            }
+        }
+
+        @media (min-width: 769px) {
+
+            .container {
+                width: 720px;
+            }
+
+            .col-md-4 {
+                width: 100%;
+            }
+
+            .col-md-3 {
+                width: calc((100% / 4) * 3);
+            }
+
+            .col-md-2 {
+                width: calc((100% / 4) * 2);
+            }
+
+            .col-md-1 {
+                width: calc(100% / 4);
+            }
+        }
+
+        @media (min-width: 993px) {
+
+            .container {
+                width: 960px;
+            }
+
+            .col-lg-4 {
+                width: 100%;
+            }
+
+            .col-lg-3 {
+                width: calc((100% / 4) * 3);
+            }
+
+            .col-lg-2 {
+                width: calc((100% / 4) * 2);
+            }
+
+            .col-lg-1 {
+                width: calc(100% / 4);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1140px;
+            }
+
+            .col-xl-4 {
+                width: 100%;
+            }
+
+            .col-xl-3 {
+                width: calc((100% / 4) * 3);
+            }
+
+            .col-xl-2 {
+                width: calc((100% / 4) * 2);
+            }
+
+            .col-xl-1 {
+                width: calc(100% / 4);
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                width: 1320px;
+                margin: 0 10px;
+            }
+
+            .col-xxl-4 {
+                width: 100%;
+            }
+
+            .col-xxl-3 {
+                width: calc((100% / 4) * 3);
+            }
+
+            .col-xxl-2 {
+                width: calc((100% / 4) * 2);
+            }
+
+            .col-xxl-1 {
+                width: calc(100% / 4);
+            }
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .justify-content-start {
+            justify-content: flex-start;
+        }
+
+        .justify-content-end {
+            justify-content: flex-end;
+        }
+
+        .justify-content-space-between {
+            justify-content: space-between;
+        }
+
+        .justify-content-space-evenly {
+            justify-content: space-evenly;
+        }
+
+        .justify-content-space-around {
+            justify-content: space-around;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-1 col-sm-2">
+            <div class="bg-dark-silver box img-1"></div>
+        </div>
+        <div class="col-1 col-sm-2 col-md-4 col-lg-1 col-xl-2">
+            <div class="bg-dark-silver box img-2"></div>
+        </div>
+        <div class="col-1 col-sm-4 col-md-2 col-lg-1 col-xl-2">
+            <div class="bg-dark-silver box"></div>
+        </div>
+        <div class="col-1 col-sm-4 col-md-2 col-lg-1 col-xl-2">
+            <div class="bg-dark-silver box"></div>
+        </div>
+    </div>
+    <div class="row justify-content-space-around">
+        <div class="col-1">
+            <div class="bg-dark box"></div>
+        </div>
+        <div class="col-1">
+            <div class="bg-dark box"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="bg-dark box"></div>
+        </div>
+        <div class="col-1">
+            <div class="bg-dark box"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            <div class="bg-dark box"></div>
+        </div>
+        <div class="col-3">
+            <div class="bg-dark box"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="bg-dark box"></div>
+        </div>
+    </div>
+</div>
+
+
+
+</body></html>

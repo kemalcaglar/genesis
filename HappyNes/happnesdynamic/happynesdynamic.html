@@ -1,0 +1,207 @@
+<script>
+
+    var objectRandom = {
+        xyz: {
+            name: "name",
+            discountPrice: "4434",
+        },
+    };
+    var categoryArrya = ["Urbanears", "tel", "diy"];
+    var whichCategory = jQuery(".breadcrumb li").eq(2).find("a").text();
+    /* whichcategory değişkenine sahip key varsa onun içine eklenecek yoksa olabilecek kategory isimlerinde var mı kontrol edilecek varsa yeni olarak eklenecek */
+    for (const key in categoryArrya) {
+        if (categoryArrya.hasOwnProperty(key)) {
+            const element = categoryArrya[key];
+            if (whichCategory === element) {
+                objectRandom[element] = { name: "hi", discountPrice: "3232" };
+            }
+        }
+    }
+    for (var key in objectRandom) {
+        if (key === whichCategory) {
+            var index= objectRandom[key].length;
+            objectRandom[key][index]= { name: "hell0", discountPrice: "3232" }
+        } else {
+            for (const key in categoryArrya) {
+                if (categoryArrya.hasOwnProperty(key)) {
+                    const element = categoryArrya[key];
+                    if (whichCategory === element) {
+                        objectRandom[element] = [{ name: "hi", discountPrice: "3232" }];
+                    }
+                }
+            }
+        }
+    }
+
+    jQuery(window).scroll(function() {
+        var top_of_element = jQuery(".scenario-2-1").offset().top;
+        var bottom_of_element = jQuery(".scenario-2-1").offset().top + jQuery(".scenario-2-1").outerHeight();
+        var bottom_of_screen = jQuery(window).scrollTop() + window.innerHeight;
+        var top_of_screen = jQuery(window).scrollTop();
+
+        if((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+            jQuery('.scenario-2-1').animate({'opacity':'0'},0);
+        }
+        else {
+            jQuery('.scenario-2-1').animate({'opacity':'0'},0);
+        }
+    });
+</script>
+jQuery(“.product-item”).parent().prepend(jQuery(“.product-item”).eq(1))
+
+
+jQuery(".product-item").each((index,item)=>{
+if(jQuery(item).find("a").attr("href")= local.rra.href){
+jQuery(".product-item").parent().prepend(jQuery(".product-item").eq(index))
+}
+})
+
+
+
+jQuery("#product-details-form").each((index,item)=> {
+if(jQuery("#product-details-form").attr("action")= window.location.pathname) {
+jQuery(".product-item").parent().prepend(jQuery(".product-item).eq(index))
+}
+});
+
+
+
+.img-responsive-smpl{
+overflow: hidden;
+z-index: 1;
+border-radius: 49%;
+
+
+width: 50%;
+height: 0;
+padding-top: calc(50% - 20px);
+border-radius: 50%;
+border: 10px solid rgb(245,245,245);
+margin: auto;
+margin-bottom: auto;
+background-size: cover;
+background-position: center;
+margin-bottom: 10%;
+
+left: 0;
+top: 0;
+}
+
+
+<div class="col-xs-4 product-item">
+    <a href="` + product.href + `">
+        <div class="product-img" style="background-image: url(` + product.src + `);">
+            <div class="iframe-clicker"></div>
+        </div>
+        <h4>` +
+            product.name +
+            `</h4>
+        <div class="zigzag darkpink"></div>
+        <span class="product-price">` + product.discountPrice + `</span>
+    </a>
+
+
+</div>
+----------
+<div class="item">
+    <div class="col-xs-4">
+        <a href="` + product.href + `">
+        <img src="` + product.src + `" class="img-responsive" style="border-radius:100%">
+        </a>
+        <div style="text-align:center"><h3 style="font-family:bauer"><a style="color: black;" href="`
+                        + product.href +
+                        `"  title="` +
+                        product.name +
+                        `">` +
+                        product.name +
+                        `</a><h3>
+        </div>
+        <div style="text-align:center"><p style="font-weight:bold;">` + product.discountPrice + `</p></div>
+    </div>
+</div>`
+                });
+
+
+
+          var metin = "Yatak Seçimi İçin Destek Alabilirsiniz";
+          var buttonMetin = "Randevu Oluştur";
+          var html = `<div class="col-12 col-lg-12 col-md-12 col-xl-12 smpl" 
+          style="background-color: #DFD7CC;height: 50px;max-width: 100%;position: relative;display: flex;align-items: center;justify-content: center;">
+          <p style="margin: 0;color: #fff;font-size: 18px;">` + metin + `</p><button type="button" class="smplBulten" 
+          style="background-color: #8D7769;padding: 6px 10px;border-radius: 5px;margin-left: 70px;">
+          <a style="color:#fff;" href="https://yatsan.com/yatak-danisma-hatti">` + buttonMetin + `</a></button></div>`;
+          jQuery(".product-list.parent .parent-pitem").eq(3).before(html);
+          jQuery(".smplBulten").click(function () {
+            setLevel(LEVEL_JOIN, "click_categoryBanner")
+          })
+
+
+
+
+
+          if(jQuery('#divSayfalamaUst .mobilFilterBtn').text()==="+ FİLTRELE"){
+            jQuery('#divSayfalamaUst .mobilFilterBtn').css({"font-weight":"bold","color":"red"})
+           /* setLevel(LEVEL_JOIN, 'Shown'); */ 
+        }
+          /*jQuery('#divSayfalamaUst .mobilFilterBtn').click(() => {
+              setLevel(LEVEL_JOIN, "click-filter");
+          })*/
+
+
+
+          var metin = "Yatak Seçimi İçin Destek Alabilirsiniz";
+          var buttonMetin = "Randevu Oluştur";
+          var html = `<div class="col-12 col-lg-12 col-md-12 col-xl-12 smpl" 
+          style="background-color: #DFD7CC;height: 50px;max-width: 100%;position: relative;display: flex;align-items: center;justify-content: center;">
+          <p style="margin: 0;color: #fff;font-size: 18px;">` + metin + `</p><button type="button" class="smplBulten" 
+          style="background-color: #8D7769;padding: 6px 10px;border-radius: 5px;margin-left: 70px;">
+          <a style="color:#fff;" href="https://yatsan.com/yatak-danisma-hatti">` + buttonMetin + `</a></button></div>`;
+          document.querySelectorAll(".product-list.parent .parent-pitem")[3].insertAdjacentHTML("afterend", html);
+
+
+          var showCount = 0;
+          jQuery(window).scroll(function () {
+            var top_of_element = jQuery(".product-list.parent .parent-pitem .smpl").offset().top;
+            var bottom_of_element =
+              jQuery(".product-list.parent .parent-pitem .smpl").offset().top +
+              jQuery(".product-list.parent .parent-pitem .smpl").outerHeight();
+            var bottom_of_screen = jQuery(window).scrollTop() + window.innerHeight;
+            var top_of_screen = jQuery(window).scrollTop();
+            if (bottom_of_screen > top_of_element && top_of_screen < bottom_of_element) {
+              showCount == 0 ? setLevel(LEVEL_JOIN, "shown-banner") : false;
+              shownCount++;
+            }
+          });
+
+
+          var metin = "Yatak Seçimi İçin Destek Alabilirsiniz";
+          var buttonMetin = "Randevu Oluştur";
+          var html = `<div class="col-12 col-lg-12 col-md-12 col-xl-12 smpl" 
+          style="background-color: #DFD7CC;height: 50px;max-width: 100%;position: relative;display: flex;align-items: center;justify-content: center;">
+          <p style="margin: 0;color: #fff;font-size: 12px;">` + metin + `</p><button type="button" class="smplBulten" 
+          style="background-color: #8D7769;padding: 6px 10px;border-radius: 5px;margin-left: 70px;">
+          <a style="color:#fff;" href="https://yatsan.com/yatak-danisma-hatti">` + buttonMetin + `</a></button></div>`;
+          jQuery(".product-list.parent .pitem").eq(3).after(html);
+          jQuery("#department-body .product-list.parent .pitem:last-child").click(function () {
+            setLevel(LEVEL_JOIN, "click_productCard")
+          })
+
+
+          var showCount = 0;
+          jQuery(window).scroll(function () {
+            var top_of_element = jQuery(".product-list.parent .pitem .smpl").offset().top;
+            var bottom_of_element =
+              jQuery(".product-list.parent .pitem .smpl").offset().top +
+              jQuery(".product-list.parent .pitem .smpl").outerHeight();
+            var bottom_of_screen = jQuery(window).scrollTop() + window.innerHeight;
+            var top_of_screen = jQuery(window).scrollTop();
+            if (bottom_of_screen > top_of_element && top_of_screen < bottom_of_element) {
+              showCount == 0 ? setLevel(LEVEL_JOIN, "shown-banner") : false;
+              shownCount++;
+            }
+          });
+
+                    if (jQuery("#showbasket span").text().trim() > 0) {
+            jQuery("body").prepend(html);
+            setLevel(LEVEL_JOIN, "Shown");
+          }

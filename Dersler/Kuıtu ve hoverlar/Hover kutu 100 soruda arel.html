@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>case 13</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            background: #fbfbfb;
+        }
+        .container {
+            margin: 0 auto;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin:0 -10px;
+        }
+        .col-sm-4,
+        .col-sm-3,
+        .col-sm-2,
+        .col-sm-1,
+        .col-md-4,
+        .col-md-3,
+        .col-md-2,
+        .col-md-1,
+        .col-lg-4,
+        .col-lg-3,
+        .col-lg-2,
+        .col-lg-1,
+        .col-xl-4,
+        .col-xl-3,
+        .col-xl-2,
+        .col-xl-1,
+        .col-xxl-4,
+        .col-xxl-3,
+        .col-xxl-2,
+        .col-xxl-1 {
+            padding:0 10px;
+        }
+        @media (min-width: 577px){
+            .container {
+                width: 540px;
+            }
+            .col-sm-4 {
+                width: calc((100% / 4) * 4);
+            }
+            .col-sm-3 {
+                width: calc((100% / 4) * 3);
+            }
+            .col-sm-2 {
+                width: calc((100% / 4) * 2);
+            }
+            .col-sm-1 {
+                width: calc(100% / 4);
+            }
+        }
+        @media (min-width: 769px){
+            .container {
+                width: 720px;
+            }
+            .col-md-4 {
+                width: calc((100% / 4) * 4);
+            }
+            .col-md-3 {
+                width: calc((100% / 4) * 3);
+            }
+            .col-md-2 {
+                width: calc((100% / 4) * 2);
+            }
+            .col-md-1 {
+                width: calc(100% / 4);
+            }
+        }
+        @media (min-width: 993px){
+            .container {
+                width: 960px;
+            }
+            .col-lg-4 {
+                width: calc((100% / 4) * 4);
+            }
+            .col-lg-3 {
+                width: calc((100% / 4) * 3);
+            }
+            .col-lg-2 {
+                width: calc((100% / 4) * 2);
+            }
+            .col-lg-1 {
+                width: calc(100% / 4);
+            }
+        }
+        @media (min-width: 1200px){
+            .container {
+                width: 1140px;
+            }
+            .col-xl-4 {
+                width: calc((100% / 4) * 4);
+            }
+            .col-xl-3 {
+                width: calc((100% / 4) * 3);
+            }
+            .col-xl-2 {
+                width: calc((100% / 4) * 2);
+            }
+            .col-xl-1 {
+                width: calc(100% / 4);
+            }
+        }
+        @media (min-width: 1400px){
+            .container {
+                width: 1320px;
+            }
+            .col-xxl-4 {
+                width: calc((100% / 4) * 4);
+            }
+            .col-xxl-3 {
+                width: calc((100% / 4) * 3);
+            }
+            .col-xxl-2 {
+                width: calc((100% / 4) * 2);
+            }
+            .col-xxl-1 {
+                width: calc(100% / 4);
+            }
+        }
+        img {
+            display:block;
+        }
+
+        .img-responsive {
+            width: 100%;
+            height: auto;
+        }
+        .box {
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .box .sub-box {
+            position: relative;
+            margin: -60px 20px 0 20px;
+        }
+        .box .sub-box > .soru {
+            position: relative;
+            z-index: 2;
+            background: #fbfbfb;
+            height: 100px;
+            padding: 0 10px;
+
+        }
+        .box .sub-box > .cevap {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            top: -5px;
+            left: 0;
+            right: 0;
+            border-top: 5px solid transparent;
+            transition: top 0.3s;
+            height: 150px;
+            color: #fbfbfb;
+        }
+        .box .sub-box > .soru,
+        .box .sub-box > .cevap {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            text-align: center;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        .box:hover .sub-box > .cevap {
+            top: -150px;
+        }
+
+        .box.blue .sub-box > .soru {
+           color: #00529b;
+        }
+        .box.blue .sub-box > .cevap {
+            border-top-color: #00529b;
+            background: #00529b80;
+        }
+        .box.purple .sub-box > .soru {
+            color: #d00f82;
+        }
+        .box.purple .sub-box > .cevap {
+            border-top-color: #d00f82;
+            background: #d00f8280;
+        }
+        .box.green .sub-box > .soru {
+            color: #7dab02;
+        }
+        .box.green .sub-box > .cevap {
+            border-top-color: #7dab02;
+            background: #7dab0280;
+        }
+        .box.orange .sub-box > .soru {
+            color: #f36523;
+        }
+        .box.orange .sub-box > .cevap {
+            border-top-color: #f36523;
+            background: #f3652380;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1">
+                <div class="box blue">
+                    <img class="img-responsive" src="https://i2.cnnturk.com/i/cnnturk/75/630x0/5e352c3879da3e1c50b7cd88.jpg" alt="student">
+                    <div class="sub-box">
+                        <div class="soru">Neden <br>Arel Üniversitesi ?</div>
+                        <div class="cevap">100 Soruda İstanbul Arel Üniversitesi</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div class="box purple">
+                    <img class="img-responsive" src="https://i2.cnnturk.com/i/cnnturk/75/630x0/5e352c3879da3e1c50b7cd88.jpg" alt="student">
+                    <div class="sub-box">
+                        <div class="soru">Neden <br>Arel Üniversitesi ?</div>
+                        <div class="cevap">100 Soruda İstanbul Arel Üniversitesi</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div class="box green">
+                    <img class="img-responsive" src="https://i2.cnnturk.com/i/cnnturk/75/630x0/5e352c3879da3e1c50b7cd88.jpg" alt="student">
+                    <div class="sub-box">
+                        <div class="soru">Neden <br>Arel Üniversitesi ?</div>
+                        <div class="cevap">100 Soruda İstanbul Arel Üniversitesi</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div class="box orange">
+                    <img class="img-responsive" src="https://i2.cnnturk.com/i/cnnturk/75/630x0/5e352c3879da3e1c50b7cd88.jpg" alt="student">
+                    <div class="sub-box">
+                        <div class="soru">Neden <br>Arel Üniversitesi ?</div>
+                        <div class="cevap">100 Soruda İstanbul Arel Üniversitesi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

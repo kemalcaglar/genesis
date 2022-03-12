@@ -1,0 +1,573 @@
+    //
+    // Disable Button
+    //
+
+    function disableButton(){
+
+        var $disableButton = $('.btn-disable');
+
+        $disableButton.click(function () {
+            return false;
+        });
+
+    }
+
+    //
+    // Mobile Menü
+    //
+
+    function mobileMenu(){
+
+        // Mobil Menü
+        $mobileMenu = $('#mobile-menu');
+        // Mobil Menüyü Açıp Kapayan Buton
+        $toggleMobileMenuButton = $('.toggle-mobile-nav');
+
+
+        $mobileMenu.children('ul').children('ul').parent('li').children('a').click(function () {
+            $(this).parent('li').toggleClass('open');
+            $(this).parent('li').children('ul').toggle(300);
+
+            var findClass = $(this).parent('li').hasClass('open');
+            if (findClass) {
+                $(this).parent('li').children('a').children('i').addClass('fa-chevron-up').removeClass('fa-chevron-down');
+            } else {
+                $(this).parent('li').children('a').children('i').addClass('fa-chevron-down').removeClass('fa-chevron-up');
+            }
+
+            return false;
+        });
+
+        $mobileMenu.children('ul').children('ul').each(function () {
+            var findClass = $(this).parent('li').hasClass('open');
+            if (findClass) {
+                $(this).parent('li').children('a').append('<i class="fas fa-chevron-up pull-right font-size-12 margin-top-7"></i>');
+            } else {
+                $(this).parent('li').children('a').append('<i class="fas fa-chevron-down pull-right font-size-12 margin-top-7"></i>');
+            }
+        });
+
+        $toggleMobileMenuButton.click(function () {
+            $('#mobile-menu').toggleClass('open-menu');
+            return false;
+        });
+
+
+    }
+
+    //
+    // Aside Menü
+    //
+
+    function asideMenu() {
+
+        $asideMenu = $('#aside-menu');
+
+        $asideMenu.children('ul').children('ul').hide();
+        $asideMenu.find('a.active').show();
+        $asideMenu.children('ul').children('ul').addClass('bg bg-white opacity-30');
+        $asideMenu.children('ul').children('ul').parent('li').children('a').append('<i class="pull-right margin-top-3 fa fa-angle-down" aria-hidden="true"></i>');
+        $asideMenu.children('ul').children('ul').parent('li').children('a').click(function () {
+            $(this).parent('li').children('ul').toggle(300);
+            return false;
+        });
+
+        mobileMenu();
+        activeTriangle();
+
+    }
+
+    //
+    // Triangle
+    //
+
+    function activeTriangle() {
+
+        $active = $('#aside-menu li.active');
+
+        $active.children('a').append('<div class="absolute top right bottom margin-offset-right-8 vertical-middle"><i class="fas fa-caret-right font-dark"></i></div>');
+
+    }
+
+    //
+    // Mobile Menu Clone
+    //
+
+    function mobileMenu() {
+
+        $mobileMenuContainer = $('#mobile-menu-container');
+        $mobileMenu          = $('#mobile-menu');
+        $menu                = $('#aside-menu ul');
+        $mobileMenuButton    = $('.mobile-menu-button');
+
+        $menu.clone().removeAttr('class').removeAttr('id').appendTo($mobileMenu);
+
+        $mobileMenuButton.click(function(){
+            $mobileMenuContainer.toggleClass('open-menu');
+            $('body').toggleClass('window-height overflow-hidden');
+            return false;
+        });
+
+
+    }
+
+    //
+    // Geri Sayım Sayacı
+    //
+
+    function countDownTimer(dt, day, hour, minute, second, countdown) {
+
+        var end = new Date(dt);
+
+        var _second  = 1000;
+        var _minute  = _second * 60;
+        var _hour    = _minute * 60;
+        var _day     = _hour * 24;
+        var timer;
+
+        function showRemaining() {
+
+            var now = new Date();
+            var distance = end - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                //document.getElementById(countdown).innerHTML = "DOLDU!";
+                return;
+            }
+
+            var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+
+
+            document.getElementById(day).innerHTML = days;
+            document.getElementById(hour).innerHTML = hours;
+            document.getElementById(minute).innerHTML = minutes;
+            document.getElementById(second).innerHTML = seconds;
+
+        }
+
+        timer = setInterval(showRemaining, 1000);
+
+
+    }
+
+    //
+    // Tree
+    //
+
+    function tree(){
+
+        $tree = $('.tree');
+
+        $tree.each(function () {
+            $(this).find('.wood-leaf').click(function () {
+                $(this).parent('span').parent('.tree-branch').parent('li').children('ul').toggle();
+                $(this).children('i').toggleClass('fa-chevron-up', 'add');
+                $(this).children('i').toggleClass('fa-chevron-down', 'remove');
+                return false;
+            });
+        });
+
+    }
+
+    //
+    // WoW Animasyon
+    //
+
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 10,
+        mobile: true,
+        live: true,
+        callback: function (box) {},
+        scrollContainer: null
+    });
+
+    //
+    // Go Animation
+    //
+
+    function goAnimation(pixel){
+
+        $body = $('html, body');
+
+        $body.animate({
+            scrollTop: pixel
+        }, 800);
+
+    }
+
+    //
+    // Go Up
+    //
+
+    function goUp(){
+
+        $goUp = $('#go-up');
+
+        $goUp.click(function () {
+
+            $('html, body').animate({
+                scrollTop: 0
+            }, 800);
+
+            return false;
+
+        });
+
+    }
+
+    //
+    // Go Content
+    //
+
+    function goContent(){
+
+        var $goContent = $('#go-content');
+
+        $goContent.click(function () {
+
+            var $contentPosition = $(this).parent('section');
+
+            var contentStart = $contentPosition.position().top + $contentPosition.outerHeight();
+
+            goAnimation(contentStart);
+
+            return false;
+
+        });
+
+    }
+
+    //
+    // Go Link
+    //
+
+    function goLink(){
+
+        $goLink = $('.go-button');
+
+        $goLink.click(function() {
+
+            var contentId = $(this).attr('href');
+
+            var contentPosition  = $(contentId).offset().top;
+
+            goAnimation(contentPosition);
+
+            return false;
+
+        });
+
+    }
+
+    //
+    // Tab
+    //
+
+    function tab(){
+
+        $tab = $('.tab');
+
+        $tab.each(function(){
+
+            // İçeriklerin görünümlerini ayarla.
+            $(this).find('.tab-content>div').hide();
+            $(this).find('.tab-content>div:first-child').show();
+
+            // Bağlantılara tıkla.
+            $(this).find('.tab-nav').find('a').click(function(){
+
+                if ($(this).hasClass('active')) {
+
+                    return false;
+
+                } else {
+
+                    // Bağlantıların aktifliğini ayarla.
+                    $(this).closest('.tab-nav').find('a').removeClass('btn-primary active').addClass('btn-outline-primary');
+                    $(this).addClass('btn-primary active').removeClass('btn-outline-primary');
+
+                    // Bağlantının içerik idsini bul.
+                    var contentId = $(this).attr('href');
+
+                    //  İçeriği görüntüle.
+                    $(this).closest('.tab').find('.tab-content>div').hide(500);
+                    $(this).closest('.tab').find('.tab-content ' + contentId).delay(500).show(500);
+
+                    // Ekran konumunu ayarla.
+                    var contentPosition = $(contentId).closest('.tab').offset().top - 20;
+
+                    goAnimation(contentPosition);
+
+                    return false;
+
+                }
+
+
+            });
+        });
+
+
+    }
+
+    //
+    // Sticky Footer
+    //
+
+    function stickyFooter(){
+
+        $stickyFooter = $('footer#sticky');
+
+        var footerHeight = $stickyFooter.outerHeight();
+
+        $stickyFooter.parent().css('padding-bottom', footerHeight);
+
+    }
+
+    //
+    // Bootstrap
+    //
+
+        //
+        // Tooltip
+        //
+
+        function tooltip(){
+
+            $tooltip = $('.tooltip-element');
+
+            $tooltip.tooltip();
+
+        }
+
+
+        //
+        // Bootstrap Accordion
+        //
+
+        function accordion(){
+
+
+            $accordion = $('.accordion');
+
+            $accordion.each(function(){
+                $(this).find('.card .card-header button');
+            });
+
+            $accordion.find('.card .card-header button').each(function () {
+
+                var findClass = $(this).hasClass('collapsed');
+
+                if (findClass) {
+                    $(this).append('<i class="fas fa-chevron-down pull-right font-size-12 margin-top-7"></i>');
+                } else {
+                    $(this).append('<i class="fas fa-chevron-up pull-right font-size-12 margin-top-7"></i>');
+                }
+
+            });
+
+            $accordion.find('.card .card-header button').click(function () {
+
+                $accordion.find('.card .card-header button i').removeClass('fa-chevron-up');
+                $accordion.find('#accordion .card .card-header button i').addClass('fa-chevron-down');
+
+                var findClass = $(this).hasClass('collapsed');
+
+                if (findClass) {
+                    $(this).children('i').addClass('fa-chevron-up');
+                } else {
+                    $(this).children('i').addClass('fa-chevron-down');
+                }
+
+            });
+
+        }
+
+
+    //
+    // Magnific Popup
+    //
+
+    function gallery(){
+
+        $gallery = $('.gallery');
+
+        $gallery.each(function () {
+            $(this).magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+
+    }
+
+
+    function popupImage(){
+
+        $popupImage = $('.popup-image');
+
+        $popupImage.magnificPopup({
+            type: 'image'
+        });
+
+    }
+
+    function popupIframe(){
+
+        $popupIframe = $('.popup-youtube, .popup-vimeo, .popup-gmaps, .popup-iframe');
+
+        $popupIframe.magnificPopup({
+            type: 'iframe',
+            mainClass: '',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false,
+            callbacks: {
+                open: function () {
+                    $('html').addClass('overflow-hidden');
+
+                },
+                close: function () {
+                    $('html').removeClass('overflow-hidden');
+                }
+            }
+        });
+
+    }
+
+    function modal(){
+
+        $modal = $('.modal');
+
+        $modal.magnificPopup({
+            mainClass: 'mfp-fade',
+            type: 'inline',
+            midClick: true,
+            removalDelay: 300
+        });
+
+    }
+
+    //
+    // Select2
+    //
+
+    function autoSelect(){
+
+        $autoSelect = $('.autoselect');
+
+        $autoSelect.select2({
+            placeholder: "Seçiminizi yazın!",
+            allowClear: true
+        });
+
+    }
+
+    //
+    // Owl Carousel
+    //
+
+    function owlCarousel(){
+
+        $owlCarousel = $('.card .card-header figure.owl-carousel, .card-carousel.owl-carousel');
+
+        $owlCarousel.owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        });
+
+
+
+    }
+
+    $(document).ready(function () {
+
+        // Butonu pasif hale getirir
+        //disableButton();
+
+        // Mobil Menüyü Çalıştırır
+        //mobileMenu();
+
+        // Yan Menüyü Çalıştırır
+        asideMenu();
+
+        // Geri Sayımı Çalıştırır
+        countDownTimer('4/24/2019 10:1 AM', 'gun', 'saat', 'dakika', 'saniye', 'kalan-zaman');
+
+        // Ağaç Yapısını Çalıştırır
+        //tree();
+
+        // Animation.css Desteği
+        //wow.init();
+
+        // Sayfa Yukarı Çıkar
+        //goUp();
+
+        // Sayfa İçeriğe Kayar
+        //goContent();
+
+        // Sayfa Belirtilen Bölüme Kayar
+        //goLink();
+
+        // Sabit Footer
+        //stickyFooter();
+
+        // Tab
+        tab();
+
+        // Accordion
+        //accordion();
+
+        // Tooltip
+        //tooltip();
+
+        // Galeri Popup
+        //gallery();
+
+        // Tek Görsel Popup
+        //popupImage();
+
+        // Iframe Popup
+        //popupIframe();
+
+        // Modal
+        //modal();
+
+        // Otomatik Seçim
+        //autoSelect();
+
+        // Owl Carousel Slide
+        //owlCarousel();
+
+    });
+
+    $(window).resize(function () {
+
+
+    });
+
+
