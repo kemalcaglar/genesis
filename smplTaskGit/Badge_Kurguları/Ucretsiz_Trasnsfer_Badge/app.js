@@ -45,7 +45,7 @@
       style: function () {
         let css = `<style>
           .smpl_${config.scenarioname} {
-            padding-left: 25px;
+            padding-left: 24px;
             font-size: 13px;
             cursor: pointer;
             position: relative;
